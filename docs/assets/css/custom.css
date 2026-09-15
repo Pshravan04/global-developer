@@ -1,0 +1,133 @@
+/* 
+   FNO Global Developers - North Goa Theme
+   Palette:
+   - Deep Forest Green: #1A3626
+   - Ivory Background: #FDFBF7
+   - Gold Accents: #D4AF37
+*/
+
+:root {
+    --fno-green: #1A3626;
+    --fno-ivory: #FDFBF7;
+    --fno-gold: #D4AF37;
+    --fno-text: #2d3748;
+}
+
+/* Base Body and Backgrounds */
+body, .page_wrap {
+    background-color: var(--fno-ivory) !important;
+    color: var(--fno-text);
+}
+
+.elementor-section.scheme_dark {
+    background-color: var(--fno-green) !important;
+}
+
+/* Typography Overrides */
+.sc_item_title_text, 
+.elementor-heading-title, 
+h1, h2, h3, h4, h5, h6 {
+    color: var(--fno-green) !important;
+    font-weight: 600;
+}
+
+/* Specific fix for hero and dark sections */
+.elementor-section.scheme_dark .sc_item_title_text,
+.elementor-section.scheme_dark .elementor-heading-title,
+.elementor-section.scheme_dark h1, 
+.elementor-section.scheme_dark h2, 
+.elementor-section.scheme_dark h3, 
+.elementor-section.scheme_dark h4, 
+.elementor-section.scheme_dark h5, 
+.elementor-section.scheme_dark h6 {
+    color: var(--fno-ivory) !important;
+}
+
+/* Descriptions / Paragraphs */
+.sc_item_descr, .sc_item_descr p, .sc_item_descr li {
+    font-size: 1.15rem !important;
+    line-height: 1.8 !important;
+    color: var(--fno-text) !important;
+    margin-bottom: 1rem;
+}
+
+.elementor-section.scheme_dark .sc_item_descr, 
+.elementor-section.scheme_dark .sc_item_descr p, 
+.elementor-section.scheme_dark .sc_item_descr li {
+    color: #E2E8F0 !important;
+}
+
+/* Lists styling */
+.sc_item_descr ul {
+    list-style-type: none;
+    padding-left: 0;
+    margin-top: 1.5rem;
+}
+
+.sc_item_descr ul li {
+    position: relative;
+    padding-left: 2rem;
+    margin-bottom: 1rem;
+}
+
+.sc_item_descr ul li::before {
+    content: "•";
+    color: var(--fno-gold);
+    font-size: 1.5rem;
+    position: absolute;
+    left: 0;
+    top: -5px;
+}
+
+/* Links & Buttons */
+a {
+    color: var(--fno-green);
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: var(--fno-gold) !important;
+}
+
+.sc_button, .elementor-button, button {
+    background-color: var(--fno-green) !important;
+    color: var(--fno-ivory) !important;
+    border: 1px solid var(--fno-green) !important;
+    border-radius: 4px;
+}
+
+.sc_button:hover, .elementor-button:hover, button:hover {
+    background-color: var(--fno-ivory) !important;
+    color: var(--fno-green) !important;
+    border: 1px solid var(--fno-green) !important;
+}
+
+/* Header Adjustments */
+.top_panel_custom {
+    background-color: var(--fno-ivory) !important;
+    border-bottom: 1px solid rgba(26, 54, 38, 0.1);
+}
+
+.sc_layouts_menu_nav > li > a {
+    color: var(--fno-green) !important;
+    font-weight: 500;
+}
+
+.sc_layouts_menu_nav > li > a:hover,
+.sc_layouts_menu_nav > li.current-menu-item > a {
+    color: var(--fno-gold) !important;
+}
+
+/* Ensure images span nicely */
+.elementor-widget-image img {
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+}
+
+/* Failsafe Visibility Overrides */
+.elementor-element { opacity: 1 !important; visibility: visible !important;  }
+.sc_fly_static { opacity: 1 !important;  }
+.elementor-invisible { visibility: visible !important; opacity: 1 !important; }
+
+
+html, body { overflow-x: hidden !important; }

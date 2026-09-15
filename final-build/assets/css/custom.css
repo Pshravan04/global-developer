@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap');
+
 /* 
    FNO Global Developers - North Goa Theme
    Palette:
@@ -11,12 +13,15 @@
     --fno-ivory: #FDFBF7;
     --fno-gold: #D4AF37;
     --fno-text: #2d3748;
+    --fno-font-body: 'Inter', sans-serif;
+    --fno-font-heading: 'Playfair Display', serif;
 }
 
 /* Base Body and Backgrounds */
-body, .page_wrap {
+body, .page_wrap, p {
     background-color: var(--fno-ivory) !important;
     color: var(--fno-text);
+    font-family: var(--fno-font-body) !important;
 }
 
 .elementor-section.scheme_dark {
@@ -28,6 +33,7 @@ body, .page_wrap {
 .elementor-heading-title, 
 h1, h2, h3, h4, h5, h6 {
     color: var(--fno-green) !important;
+    font-family: var(--fno-font-heading) !important;
     font-weight: 600;
 }
 
@@ -94,6 +100,7 @@ a:hover {
     color: var(--fno-ivory) !important;
     border: 1px solid var(--fno-green) !important;
     border-radius: 4px;
+    font-family: var(--fno-font-body) !important;
 }
 
 .sc_button:hover, .elementor-button:hover, button:hover {

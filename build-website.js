@@ -112,7 +112,12 @@ function injectText($clone, section) {
 for (const [pageKey, pageData] of Object.entries(contentData.pages)) {
     const filename = pageKey === 'index' ? 'index.html' : `${pageKey}.html`;
     console.log(`Building ${filename}...`);
-    const $ = cheerio.load(baseHtml);
+    
+    let currentPageBaseHtml = baseHtml;
+    if (pageKey === 'upcoming-project') {
+        currentPageBaseHtml = fs.readFileSync('style-2-waves/index.html', 'utf8');
+    }
+    const $ = cheerio.load(currentPageBaseHtml);
     
     const $mainWrapper = $('div[data-elementor-type="wp-page"] > .elementor-section-wrap');
     if ($mainWrapper.length) {
@@ -144,7 +149,9 @@ for (const [pageKey, pageData] of Object.entries(contentData.pages)) {
 
 
         let $clone;
-        if (pageKey === 'faq' && sectionKey === 'hero') {
+        if (pageKey === 'contact-us' && sectionKey === 'form') {
+            $clone = $('<div class="elementor-section fno-contact-form-section" style="padding: 60px 20px;"><div style="max-width: 800px; margin: 0 auto; background: #fff; padding: 40px; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.05);"><h3 style="margin-bottom: 20px; color: #1A3626; font-family: \'Playfair Display\', serif;">' + section.title + '</h3><form><div style="margin-bottom: 15px;"><label style="display:block; margin-bottom:5px; font-weight:500;">Full Name</label><input type="text" style="width:100%; padding: 12px; border: 1px solid #ddd; border-radius: 4px;"></div><div style="margin-bottom: 15px;"><label style="display:block; margin-bottom:5px; font-weight:500;">Phone Number</label><input type="text" style="width:100%; padding: 12px; border: 1px solid #ddd; border-radius: 4px;"></div><div style="margin-bottom: 15px;"><label style="display:block; margin-bottom:5px; font-weight:500;">Email Address</label><input type="email" style="width:100%; padding: 12px; border: 1px solid #ddd; border-radius: 4px;"></div><div style="margin-bottom: 15px;"><label style="display:block; margin-bottom:5px; font-weight:500;">City</label><input type="text" style="width:100%; padding: 12px; border: 1px solid #ddd; border-radius: 4px;"></div><div style="margin-bottom: 15px;"><label style="display:block; margin-bottom:5px; font-weight:500;">Interested In</label><select style="width:100%; padding: 12px; border: 1px solid #ddd; border-radius: 4px; background: #fff;"><option>Upcoming North of Goa Project</option><option>Completed Portfolio</option><option>Partnership</option><option>General Inquiry</option></select></div><div style="margin-bottom: 15px;"><label style="display:block; margin-bottom:5px; font-weight:500;">Message</label><textarea rows="5" style="width:100%; padding: 12px; border: 1px solid #ddd; border-radius: 4px;"></textarea></div><button type="button" class="sc_button sc_button_default sc_button_size_normal sc_button_icon_left color_style_link3" style="border-radius: 4px; border: none; cursor: pointer; background: #1A3626; color: #fff; padding: 15px 30px;"><span class="sc_button_text"><span class="sc_button_title">Submit Inquiry</span></span></button></form></div></div>');
+        } else if (pageKey === 'faq' && sectionKey === 'hero') {
             // Render hero, then append the FAQ accordion immediately after
             $clone = $heroBlock.clone();
             injectText($clone, section);
@@ -437,11 +444,23 @@ for (const [pageKey, pageData] of Object.entries(contentData.pages)) {
         if (text === 'pages') $(el).find('> a').attr('href', 'about-us.html');
         if (text === 'properties') $(el).find('> a > span').text('Upcoming Project');
         if (text === 'properties') $(el).find('> a').attr('href', 'upcoming-project.html');
-        if (text === 'blog') $(el).find('> a > span').text('Decoding Destination');
+        if (text === 'blog') $(el).find('> a > span').text('Decoding Land');
         if (text === 'blog') $(el).find('> a').attr('href', 'decoding-destination-real-estate.html');
-        if (text === 'shop') $(el).find('> a > span').text('Contact Us');
+        if (text === 'shop') $(el).find('> a > span').text('Contact');
         if (text === 'shop') $(el).find('> a').attr('href', 'contact-us.html');
+        
+        // Remove dropdown submenus to make the navigation flat
+        $(el).find('.sub-menu').remove();
+        $(el).removeClass('menu-item-has-children');
     });
+    
+    // Add FAQs to menu before Contact if not exists
+    if ($('#menu_main').find('li a[href="faq.html"]').length === 0) {
+        let contactLi = $('#menu_main').find('li:has(a[href="contact-us.html"])');
+        if (contactLi.length) {
+            contactLi.before('<li class="menu-item menu-item-type-custom"><a href="faq.html"><span>FAQs</span></a></li>');
+        }
+    }
 
     // Replace all logo images with fno-logo-main.png
     $('.sc_layouts_logo img').each((i, el) => {

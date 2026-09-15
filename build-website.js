@@ -443,9 +443,9 @@ for (const [pageKey, pageData] of Object.entries(contentData.pages)) {
         if (text === 'shop') $(el).find('> a').attr('href', 'contact-us.html');
     });
 
-    // Replace all logo images with fno-logo.png
+    // Replace all logo images with fno-logo-main.png
     $('.sc_layouts_logo img').each((i, el) => {
-        $(el).attr('src', 'assets/images/fno-logo.png');
+        $(el).attr('src', 'assets/images/fno-logo-main.png');
         // Since the new logo is square, we'll set a standard max height
         // to prevent it from stretching awkwardly
         $(el).css({

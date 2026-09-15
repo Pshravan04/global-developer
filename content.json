@@ -1,0 +1,543 @@
+{
+  "global": {
+    "nav": [
+      {
+        "name": "Home",
+        "url": "index.html"
+      },
+      {
+        "name": "About Us",
+        "url": "about-us.html"
+      },
+      {
+        "name": "Upcoming Project",
+        "url": "upcoming-project.html"
+      },
+      {
+        "name": "Decoding Land",
+        "url": "decoding-destination-real-estate.html"
+      },
+      {
+        "name": "Contact",
+        "url": "contact-us.html"
+      },
+      {
+        "name": "FAQs",
+        "url": "faq.html"
+      },
+      {
+        "name": "Legal",
+        "url": "legal.html"
+      }
+    ],
+    "footerDisclaimer": "Project details, plans, specifications, pricing, approvals and availability are subject to change and will be shared as per the applicable development and regulatory process. This website is for information and early-interest purposes only. Buyers are advised to review all project documents and official details before making any purchase decision.",
+    "ctaSecondary": "Register Your Interest",
+    "ctaPrimary": "Explore Our Vision"
+  },
+  "pages": {
+    "index": {
+      "seo": {
+        "title": "FNO Global Developers | Premium Real Estate Developer in North of Goa",
+        "metaDesc": "FNO Global Developers is a premium real estate development company founded in 2025 and backed by promoters with nearly four decades of experience in real estate, luxury construction, investments and value-led development. Explore our upcoming villa community in North of Goa with NH-66 connectivity."
+      },
+      "hero": {
+        "title": "FNO Global Developers",
+        "subtitle": "Focused Nationwide Opportunities",
+        "description": "Premium Real Estate Destinations, Built with Vision and Experience",
+        "text": "FNO Global Developers is a new-age real estate development company founded in 2025. The brand is young, but the experience behind it is strong. Our promoters bring nearly four decades of understanding in real estate, luxury construction, business, investments and long-term value creation. We focus on identifying promising locations and shaping them into premium real estate destinations with better planning, stronger lifestyle appeal and a future-ready vision.",
+        "bottomLine": "Luxury. Location. Legacy.",
+        "primaryCTA": "Explore Our Vision",
+        "secondaryCTA": "Register Your Interest"
+      },
+      "intro": {
+        "title": "A New Brand Backed by Four Decades of Real Estate Experience",
+        "text": [
+          "Real estate is not built only with land and structure. It is built with timing, location understanding, construction quality, trust and a clear vision for the future.",
+          "FNO Global Developers was created with this belief.",
+          "Started in 2025, the company brings together modern business thinking and decades of promoter experience. Our leadership has worked across real estate, luxury construction, investments and international client markets. This gives us a balanced approach: fresh ideas supported by real-world experience.",
+          "Our aim is to create developments that feel premium, practical and meaningful for the people who live in them, invest in them and associate with them."
+        ]
+      },
+      "whyChoose": {
+        "title": "Why Choose FNO Global Developers",
+        "items": [
+          {
+            "title": "Four Decades of Promoter Experience",
+            "desc": "Our promoters bring nearly four decades of experience in real estate, construction and business. This helps us understand what makes a location strong, what buyers expect and how a project should be planned for lasting value."
+          },
+          {
+            "title": "Premium Location Selection",
+            "desc": "We focus on locations that offer lifestyle value, connectivity and future relevance. For us, location is not just an address. It is the foundation of every project."
+          },
+          {
+            "title": "Luxury with Real Meaning",
+            "desc": "Luxury is not only about expensive finishes. It is about space, privacy, comfort, thoughtful design, quality materials and details that make everyday living better."
+          },
+          {
+            "title": "Destination-Led Thinking",
+            "desc": "We look at real estate as a destination story. A good project should be connected, liveable, well-planned and aligned with the way people want to live in the future."
+          },
+          {
+            "title": "Clear and Responsible Communication",
+            "desc": "We believe buyers deserve clarity. Project details, updates and next steps should be communicated in a simple and transparent way."
+          }
+        ]
+      },
+      "leadership": {
+        "title": "Promoters and Leadership Snapshot",
+        "subtitle": "Led by Experience. Driven by a New Vision.",
+        "text": "FNO Global Developers was founded in 2025, but the strength behind the company comes from promoters with nearly four decades of experience in real estate, luxury construction, investments, business growth and international client markets.\nThe leadership team brings together two strong generations: experienced promoters who understand real estate from the ground level, and young entrepreneurs who bring modern thinking, global exposure and a future-focused approach.",
+        "list": [
+          "Kunal Arora — Founder & Managing Director",
+          "Spice Bindal — Founder & Managing Director",
+          "Jugal Arora — Founder & Chairman",
+          "Suman Bindal — Founder & Chairman"
+        ],
+        "cta": "Meet Our Promoters"
+      },
+      "marketInsight": {
+        "title": "Why North of Goa Is Getting Stronger Attention",
+        "text": [
+          "Goa is no longer only a peak-season holiday market. It is moving towards year-round travel, wellness, workation, heritage, gastronomy, MICE, adventure and experience-led tourism. Recent tourism updates reported 61.38 lakh tourist arrivals between January and July 2026, including strong domestic travel and continued international interest.",
+          "This matters for real estate because buyers are looking at Goa differently now. Many are exploring second homes, private villa stays, work-from-anywhere spaces, wellness-led living and premium lifestyle addresses.",
+          "For FNO Global Developers, this shift supports our focus on North of Goa: a location direction where lifestyle, access, nature and future demand can come together."
+        ]
+      },
+      "upcomingProject": {
+        "title": "Coming Soon in North of Goa",
+        "subtitle": "A Premium Villa Community with Direct NH-66 Connectivity",
+        "text": [
+          "FNO Global Developers is preparing to introduce a premium villa community in North of Goa, located opposite Aradhya Cinema with direct NH-66 connectivity.",
+          "This upcoming project is being planned for buyers who want more than just a property. It is for people who value space, privacy, natural surroundings, easier access and a refined lifestyle experience.",
+          "For now, the project page should remain focused on the location, the coming-soon status, the brand vision and early-interest registration."
+        ],
+        "list": [
+          "Project Status: Coming Soon",
+          "Location: Opposite Aradhya Cinema, North of Goa, NH-66",
+          "Project Type: Premium Villa Community"
+        ],
+        "cta": "Register Early Interest"
+      },
+      "lifestyle": {
+        "title": "A Location Connected to Nature, Travel and Experiences",
+        "text": [
+          "North of Goa offers a rare mix of calm living, road connectivity, tourism movement and access to coastal experiences. The larger coastal belt around Goa also has a growing experience-led travel identity, with destinations such as Malvan and Tarkarli known for water sports, scuba diving and coastal adventure.",
+          "There is also new hospitality movement in the wider coastal belt, including a proposed Taj hotel project at Shiroda-Velaghar in Sindhudurg. Such updates show that the larger Goa-Konkan region is receiving attention for premium tourism and hospitality infrastructure."
+        ]
+      },
+      "cleanEnvironment": {
+        "title": "Cleaner Surroundings. Calmer Living.",
+        "text": [
+          "For many buyers from crowded cities, a home in Goa is not only about holidays. It is about breathing easier, living slower and finding a better everyday rhythm.",
+          "Goa’s cleaner coastal environment, open surroundings and slower pace continue to make it attractive for lifestyle-led living."
+        ]
+      },
+      "portfolio": {
+        "title": "Our Completed Luxury Villa Work",
+        "subtitle": "Luxe Heaven Villas – Porvorim, North of Goa",
+        "list": [
+          "Status: Sold Out"
+        ],
+        "text": [
+          "Luxe Heaven Villas is one of our earlier luxury villa developments in Porvorim, North of Goa. Designed with European-inspired elegance and a Goan lifestyle touch, the project reflected our focus on privacy, comfort, detailing and premium living.",
+          "The project included ultra-luxury fully furnished villas with modern bedrooms, private lift, swimming pool, terrace entertainment spaces, premium fittings, home theatre, smart security and fully loaded lifestyle features."
+        ]
+      },
+      "finalCta": {
+        "title": "Be Among the First to Know",
+        "text": "A premium villa community is coming soon in North of Goa. Register your interest today to receive project updates, location details, private preview information and launch communication from FNO Global Developers.",
+        "buttons": [
+          "Register Your Interest",
+          "Speak With Our Team"
+        ]
+      }
+    },
+    "about-us": {
+      "seo": {
+        "title": "About FNO Global Developers | Premium Real Estate Company in India",
+        "metaDesc": "Learn about FNO Global Developers, a premium real estate company founded in 2025 and backed by promoters with nearly four decades of experience in real estate, luxury construction, business and investments."
+      },
+      "hero": {
+        "title": "About FNO Global Developers",
+        "subtitle": "Building with Vision. Growing with Trust.",
+        "text": "FNO Global Developers is a premium real estate development company founded in 2025 with a clear purpose: to create high-quality real estate destinations in promising locations.\nThe company is new, but the experience behind it is not. Our promoters bring nearly four decades of knowledge across real estate, luxury construction, investments, business and value creation.\nThis gives FNO Global Developers a strong foundation. We understand that real estate is not just about buying and selling property. It is about trust, timing, planning, quality and long-term confidence."
+      },
+      "standsFor": {
+        "title": "What FNO Stands For",
+        "subtitle": "Focused Nationwide Opportunities",
+        "text": [
+          "FNO stands for Focused Nationwide Opportunities.",
+          "The name reflects how we think. We focus on identifying strong real estate opportunities across India and developing them with purpose, planning and quality.",
+          "Every project begins with a simple question: Can this location create real lifestyle value and long-term relevance for buyers?",
+          "If the answer is yes, we move forward with care."
+        ]
+      },
+      "ourStory": {
+        "title": "Our Story",
+        "subtitle": "A Young Company with a Strong Foundation",
+        "text": [
+          "FNO Global Developers was started by promoters who understand real estate from experience.",
+          "Our leadership brings together different strengths: real estate, construction, investments, business, entrepreneurship and global client servicing. This combination allows us to look at every project from both a buyer’s point of view and a developer’s point of view.",
+          "We are not here to create ordinary developments. We are here to build premium real estate destinations that carry a sense of pride, comfort and trust."
+        ]
+      },
+      "leadershipDetailed": {
+        "title": "Promoters and Leadership",
+        "subtitle": "Led by Experience. Driven by a New Vision.",
+        "text": "The strength of FNO Global Developers comes from a leadership team that blends four decades of real estate and construction understanding with modern entrepreneurship and global business exposure.",
+        "profiles": [
+          {
+            "name": "Kunal Arora",
+            "role": "Founder & Managing Director",
+            "desc": "Kunal Arora is a young entrepreneur with a global outlook and experience working with international clients across diverse markets. As the founder of multiple ventures across India and international markets, he represents a new generation of leadership driven by ambition, modern business thinking and global standards.\nHis role at FNO Global Developers focuses on vision, growth, brand direction, market expansion and creating opportunities that connect with today’s premium buyers.",
+            "quote": "“A vision beyond borders, driven by ambition, built for global growth.”"
+          },
+          {
+            "name": "Spice Bindal",
+            "role": "Founder & Managing Director",
+            "desc": "Spice Bindal brings strong experience in the construction industry along with a clear understanding of execution, quality and client expectations. With a track record of working with international clients, he adds a refined approach to planning, delivery and development standards.\nHis leadership is focused on precision, discipline, construction quality and creating developments that reflect trust and premium execution.",
+            "quote": "“Global standards begin with a vision for excellence and the discipline to deliver it.”"
+          },
+          {
+            "name": "Jugal Arora",
+            "role": "Founder & Chairman",
+            "desc": "Jugal Arora brings over 30 years of experience in real estate, along with deep business understanding and strategic insight. His experience also extends across stock markets and the food industry, giving him a strong understanding of investments, business and value creation.\nHis vision is rooted in building ventures that stand on trust, quality, responsibility and enduring value.",
+            "quote": "“Our ambition is not to follow benchmarks, but to set them.”"
+          },
+          {
+            "name": "Suman Bindal",
+            "role": "Founder & Chairman",
+            "desc": "Suman Bindal brings over 30 years of distinguished experience in luxury and high-end construction. His expertise lies in craftsmanship, execution, finishing quality and creating spaces that reflect precision and sophistication.\nHis experience strengthens FNO Global Developers’ focus on premium detailing, refined construction and long-lasting value.",
+            "quote": "“True luxury lies in the details that stand the test of time.”"
+          }
+        ]
+      },
+      "visionMission": {
+        "vision": {
+          "title": "Our Vision",
+          "subtitle": "To Create Real Estate Destinations That Stand Apart",
+          "text": "Our vision is to create developments that offer more than ownership. We want our projects to offer better living, stronger location advantage, natural surroundings, refined planning and future value.\nWhether it is a villa community, a luxury residence or a destination-led development, our focus remains the same: quality, trust, lifestyle and long-term relevance."
+        },
+        "mission": {
+          "title": "Our Mission",
+          "subtitle": "To Build with Purpose, Precision and Responsibility",
+          "text": "Our mission is to identify promising locations and shape them into premium developments through thoughtful planning and quality execution.",
+          "list": [
+            "Better lifestyle choices",
+            "Strong location advantage",
+            "Practical planning",
+            "Premium design language",
+            "Quality construction",
+            "Buyer confidence",
+            "Long-term relevance",
+            "Clear communication"
+          ]
+        },
+        "values": {
+          "title": "Our Values",
+          "items": [
+            {
+              "title": "Trust",
+              "desc": "We believe trust is the base of every real estate relationship. Clear communication and responsible planning matter at every stage."
+            },
+            {
+              "title": "Quality",
+              "desc": "Every detail matters, from planning to finishing. Quality is not a one-time promise for us; it is a working habit."
+            },
+            {
+              "title": "Vision",
+              "desc": "We select locations with future direction, lifestyle relevance and real potential for thoughtful development."
+            },
+            {
+              "title": "Luxury",
+              "desc": "For us, luxury means comfort, privacy, space, elegance, functionality and thoughtful details."
+            },
+            {
+              "title": "Responsibility",
+              "desc": "We believe development should be planned with care, discipline and respect for buyers, partners and communities."
+            }
+          ]
+        },
+        "whyExperienceMatters": {
+          "title": "Why Our Experience Matters",
+          "subtitle": "Four Decades of Real Estate Understanding Behind Every Decision",
+          "text": "Real estate is one of the most important decisions a buyer makes. It involves trust, timing, planning, location, quality and long-term thinking.\nOur promoters’ experience helps us understand what makes a location strong, what buyers expect, what construction quality should feel like, and how a development should be planned for the future.\nAt FNO Global Developers, we combine this experience with a modern brand vision to create projects that feel premium, practical and future-ready."
+        }
+      },
+      "finalCta": {
+        "title": "Creating Value That Lasts",
+        "text": "At FNO Global Developers, we are not here to build short-term projects. We are here to create real estate destinations with a clear vision and long-term value.\nOur commitment is simple: Build with trust. Plan with care. Deliver with quality.",
+        "buttons": [
+          "Explore Projects",
+          "Contact Our Team"
+        ]
+      }
+    },
+    "upcoming-project": {
+      "seo": {
+        "title": "Upcoming Villa Community in North of Goa | FNO Global Developers",
+        "metaDesc": "A premium villa community is coming soon in North of Goa by FNO Global Developers. Located opposite Aradhya Cinema with direct NH-66 connectivity, the project is planned around privacy, nature, access and premium living."
+      },
+      "hero": {
+        "title": "Coming Soon",
+        "subtitle": "North of Goa",
+        "text": "A Premium Villa Community by FNO Global Developers\nFNO Global Developers is preparing to introduce a premium villa community in North of Goa, planned for buyers who want luxury, privacy, open surroundings and strong connectivity.\nThe project is positioned opposite Aradhya Cinema with direct NH-66 connectivity, giving it a strong location advantage for people who value easy access and future relevance.",
+        "buttons": [
+          "Register Early Interest",
+          "Request a Call Back"
+        ]
+      },
+      "status": {
+        "title": "Current Project Status",
+        "subtitle": "Coming Soon",
+        "text": "The upcoming project is currently in its coming-soon stage. At this point, the website page should focus on the location, the project category, the early-interest form and the vision behind the development. Detailed plans, specifications, pricing and availability should be published only after final confirmation."
+      },
+      "location": {
+        "title": "Location",
+        "subtitle": "Opposite Aradhya Cinema, North of Goa, NH-66",
+        "text": "The upcoming project is positioned on the NH-66 corridor, opposite Aradhya Cinema, in North of Goa.\nThis location gives the project a strong access advantage. It is planned for people who want the peace of a villa community without feeling disconnected from important movement routes.",
+        "list": [
+          "Located in North of Goa",
+          "Direct NH-66 connectivity",
+          "Opposite Aradhya Cinema",
+          "Strong road access",
+          "Suitable for premium villa community planning",
+          "Connected to lifestyle and tourism movement",
+          "Planned for early-interest buyers"
+        ],
+        "mapUrl": "https://maps.app.goo.gl/BgnxaPXLv9nicDyk9?g_st=aw",
+        "mapText": "View Location on Map"
+      },
+      "vision": {
+        "title": "Project Vision",
+        "subtitle": "A Villa Community Designed for a Better Way of Living",
+        "text": "The upcoming FNO villa community is being planned around privacy, nature, open surroundings and refined living.\nThe idea is not to create just another residential project. The idea is to create a premium community where residents can enjoy more space, calmer surroundings and a better lifestyle rhythm.",
+        "items": [
+          {
+            "title": "Private Villa Living",
+            "desc": "A community concept for buyers who value personal space and privacy."
+          },
+          {
+            "title": "Natural Surroundings",
+            "desc": "A lifestyle setting inspired by greenery, open air and peaceful surroundings."
+          },
+          {
+            "title": "Premium Planning",
+            "desc": "A development vision focused on comfort, design, movement and everyday usability."
+          },
+          {
+            "title": "Strong Connectivity",
+            "desc": "Direct NH-66 connectivity adds convenience and long-term location relevance."
+          },
+          {
+            "title": "Early Access",
+            "desc": "The project is coming soon, and early interest allows buyers to stay informed before the wider launch."
+          }
+        ]
+      },
+      "whyNorthGoa": {
+        "title": "Why North of Goa",
+        "subtitle": "A Destination Moving Beyond Holidays",
+        "text": "Goa is changing from a short holiday destination into a more complete lifestyle market. Tourism is becoming more experience-led, with focus areas like wellness, heritage, MICE, adventure, gastronomy and workation.\nThis shift is important for villa communities. Buyers today are looking for places where they can relax, work remotely, spend time with family and own a private destination home with long-term relevance.\nNorth of Goa offers that direction. It brings together the calm of nature, the appeal of coastal living, road connectivity and the larger lifestyle value associated with Goa."
+      },
+      "buyerProfile": {
+        "title": "Ideal Buyer Profile",
+        "subtitle": "Created for People Who Want More from Real Estate",
+        "list": [
+          "Families looking for a peaceful premium lifestyle",
+          "Buyers looking for a second home in Goa",
+          "Investors exploring destination-led real estate",
+          "Delhi NCR and metro city buyers looking for more space and calm",
+          "Professionals looking for a work-from-anywhere lifestyle",
+          "Buyers who value nature, privacy, luxury and connectivity",
+          "People who want early access before the project becomes widely known"
+        ]
+      }
+    },
+    "decoding-destination-real-estate": {
+      "seo": {
+        "title": "Decoding Destination-Led Real Estate in North of Goa",
+        "metaDesc": "Understanding Location, Lifestyle and Long-Term Value in North of Goa."
+      },
+      "hero": {
+        "title": "Decoding Destination-Led Real Estate Section",
+        "subtitle": "Understanding Location, Lifestyle and Long-Term Value",
+        "text": "Good real estate is not only about what is being built. It is also about where it is being built, why that location matters, and how the area can support future demand.\nA strong destination-led project usually has a few important qualities: access, lifestyle demand, natural surroundings, tourism movement, planning quality and long-term relevance.\nAt FNO Global Developers, we study these factors before shaping a project."
+      },
+      "factors": [
+        {
+          "title": "1. Location Comes First",
+          "desc": "A strong location creates the foundation for buyer confidence. It affects access, usability, lifestyle value and future interest."
+        },
+        {
+          "title": "2. Connectivity Adds Practical Value",
+          "desc": "A peaceful villa community should still be easy to reach. Direct NH-66 connectivity gives the upcoming FNO project a strong access advantage."
+        },
+        {
+          "title": "3. Lifestyle Demand Is Changing",
+          "desc": "People are looking for more space, greenery, privacy and better surroundings. This is why villa communities in destination-led locations are becoming more relevant."
+        },
+        {
+          "title": "4. Experiences Add Value to a Destination",
+          "desc": "Goa’s movement towards wellness, heritage, food, workation and experience-led travel adds more depth to the destination."
+        },
+        {
+          "title": "5. Quality Planning Matters",
+          "desc": "A premium project needs proper internal planning, landscaping, lighting, movement, safety and everyday comfort."
+        },
+        {
+          "title": "6. Long-Term Thinking Is Important",
+          "desc": "Real estate should not be bought only because of hype. Buyers should look at location, access, developer vision, planning, documents and long-term usability."
+        }
+      ]
+    },
+    "contact-us": {
+      "seo": {
+        "title": "Contact FNO Global Developers | Real Estate Developer in India",
+        "metaDesc": "Contact FNO Global Developers for upcoming project updates, early interest registration and premium real estate opportunities in North of Goa."
+      },
+      "hero": {
+        "title": "Speak with FNO Global Developers",
+        "text": "Whether you are exploring our upcoming villa community in North of Goa or want to know more about our real estate vision, our team will be happy to assist you.",
+        "cta": "Register Your Interest"
+      },
+      "locations": {
+        "title": "Office Locations",
+        "items": [
+          {
+            "name": "Delhi — Krishna Nagar",
+            "address": "F-3/34, Vijay Chowk, Krishna Nagar, East Delhi, New Delhi"
+          },
+          {
+            "name": "Noida — Sector 62",
+            "address": "Office No. 123, Corranthan Building, Sector 62, Noida, Uttar Pradesh"
+          },
+          {
+            "name": "Delhi — Krishna Nagar",
+            "address": "C-9/1, Sethi Building Chowk, Krishna Nagar, East Delhi, New Delhi"
+          },
+          {
+            "name": "Goa — Porvorim",
+            "address": "Porvorim, Goa"
+          }
+        ]
+      },
+      "form": {
+        "title": "Contact Form Fields",
+        "fields": [
+          "Full Name",
+          "Phone Number",
+          "Email Address",
+          "City",
+          "Interested In: Upcoming North of Goa Project / Completed Portfolio / Partnership / General Inquiry",
+          "Message"
+        ]
+      }
+    },
+    "faq": {
+      "seo": {
+        "title": "FAQs | FNO Global Developers",
+        "metaDesc": "Find answers to common questions about FNO Global Developers, the upcoming villa community in North of Goa, NH-66 connectivity, early interest, location details and the promoter experience behind the company."
+      },
+      "hero": {
+        "title": "FAQ Section",
+        "subtitle": "",
+        "text": "Frequently Asked Questions about FNO Global Developers and our upcoming projects."
+      }
+    },
+    "legal": {
+      "seo": {
+        "title": "Legal and Publishing Notes | FNO Global Developers",
+        "metaDesc": "Legal and publishing notes for FNO Global Developers and its associated projects."
+      },
+      "hero": {
+        "title": "Legal and Publishing Notes",
+        "subtitle": "Important Copy Safety and Public Reference Notes",
+        "text": "These sources were used only to support market insight and regional context. They should be treated as reference notes, not as direct sales promises."
+      },
+      "legalSections": [
+        {
+          "title": "Important Copy Safety Notes",
+          "text": [
+            "• Do not claim guaranteed returns, assured appreciation or fixed rental income.",
+            "• Do not publish exact project specifications until confirmed by the developer team.",
+            "• Do not use 'India's lowest AQI zones' unless supported by a current official source.",
+            "• Keep Luxe Heaven Villas marked as sold out if shown on the website.",
+            "• Use 'North of Goa' consistently in project-facing website copy.",
+            "• Use Sindhudurg or Malvan-Tarkarli references only as wider regional/lifestyle context, not as the main project location.",
+            "• Final website should be reviewed for RERA/regulatory requirements before publishing live project sales content."
+          ]
+        },
+        {
+          "title": "Public Reference Notes",
+          "text": [
+            "<b>Goa tourism arrivals, January-July 2026</b><br>ETTravelWorld reported that Goa recorded 61.38 lakh tourist arrivals between January and July 2026, with domestic and international visitor numbers noted in the report. <br><a href='https://travel.economictimes.indiatimes.com/news/destination/states/goa-records-6-14-million-tourist-arrivals-in-first-seven-months-of-2026/133291079' target='_blank'>Source</a>",
+            "<b>Goa year-round and experience-led tourism</b><br>Times of India described Goa's tourism brand as moving beyond beaches into cuisine, adventure, boutique stays, wellness, weddings and conferences.<br><a href='https://timesofindia.indiatimes.com/life-style/travel/whats-new-in-goa-beyond-its-beaches-discover-the-fresh-face-of-this-touristy-city/articleshow/124310431.cms' target='_blank'>Source</a>",
+            "<b>Taj hotel update in wider coastal belt</b><br>Times of India reported a tripartite agreement for a Taj hotel at Shiroda-Velaghar in Sindhudurg involving IHCL, MTDC and local landholders' representatives.<br><a href='https://timesofindia.indiatimes.com/city/mumbai/tripartite-agreement-signed-for-taj-hotel-in-sindhudurg/articleshow/133330423.cms' target='_blank'>Source</a>",
+            "<b>Tarkarli water sports and coastal experiences</b><br>Maharashtra Tourism describes Tarkarli Beach as a destination for boating, kayaking, paddleboarding, scuba diving and snorkeling.<br><a href='https://maharashtratourism.gov.in/beach/tarkarli/' target='_blank'>Source</a>",
+            "<b>Malvan Marine Sanctuary</b><br>Maharashtra Tourism notes Malvan Marine Sanctuary and the coastal area's marine biodiversity and scuba-diving appeal.<br><a href='https://maharashtratourism.gov.in/districts/sindhudurg/' target='_blank'>Source</a>",
+            "<b>Goa AQI context</b><br>Times of India reported GSPCB statements about Goa air quality remaining good to satisfactory for most of April 2025-March 2026, while also noting local variations in some areas.<br><a href='https://timesofindia.indiatimes.com/city/goa/goa-air-quality-good-water-pollution-a-concern-gspcb/amp_articleshow/131540102.cms' target='_blank'>Source</a>"
+          ]
+        }
+      ]
+    }
+  },
+  "faq": [
+    {
+      "q": "What is FNO Global Developers?",
+      "a": "FNO Global Developers is a premium real estate development company founded in 2025. The company is backed by promoters with nearly four decades of experience in real estate, luxury construction, business, investments and value creation."
+    },
+    {
+      "q": "What does FNO stand for?",
+      "a": "FNO stands for Focused Nationwide Opportunities. It reflects our vision to identify strong real estate opportunities across India and develop them with quality, planning and long-term thinking."
+    },
+    {
+      "q": "Where is the upcoming FNO project located?",
+      "a": "The upcoming project is located opposite Aradhya Cinema, in North of Goa, with direct NH-66 connectivity."
+    },
+    {
+      "q": "What type of project is coming soon?",
+      "a": "FNO Global Developers is preparing to introduce a premium villa community designed around privacy, natural surroundings, connectivity and refined living."
+    },
+    {
+      "q": "Is this project open for bookings?",
+      "a": "The project is currently in the coming-soon stage. Interested buyers can register their early interest to receive updates and launch information."
+    },
+    {
+      "q": "Why is North of Goa suitable for a villa community?",
+      "a": "North of Goa offers lifestyle appeal, road connectivity, tourism movement, natural surroundings and growing interest from buyers looking for destination-led real estate."
+    },
+    {
+      "q": "What is the benefit of NH-66 connectivity?",
+      "a": "NH-66 connectivity gives the location better access and easier movement. For a villa community, this helps balance peaceful living with practical convenience."
+    },
+    {
+      "q": "Is this project suitable for personal use or investment?",
+      "a": "The project is being planned for lifestyle buyers, second-home seekers and people exploring destination-led real estate. Buyers should evaluate project details, documents and suitability before making any decision."
+    },
+    {
+      "q": "Will more project details be shared soon?",
+      "a": "Yes. Project details, plans, specifications, pricing and availability will be shared at the appropriate stage."
+    },
+    {
+      "q": "Is Luxe Heaven Villas still available?",
+      "a": "No. Luxe Heaven Villas – Porvorim, North of Goa is an old project and is sold out. It may be shown as part of the FNO Global Developers portfolio."
+    },
+    {
+      "q": "How can I register my interest?",
+      "a": "You can register through the website enquiry form or contact the FNO Global Developers team directly."
+    },
+    {
+      "q": "Who are the founders and promoters of FNO Global Developers?",
+      "a": "FNO Global Developers is led by Kunal Arora, Spice Bindal, Jugal Arora and Suman Bindal. The leadership team brings together experience in real estate, construction, investments, business and international client servicing."
+    },
+    {
+      "q": "When was FNO Global Developers founded?",
+      "a": "FNO Global Developers was founded in 2025. The company is new, but it is backed by promoters with nearly four decades of real estate and construction experience."
+    },
+    {
+      "q": "Will the project be RERA registered?",
+      "a": "Project approvals, registrations and legal details will be shared at the appropriate stage as per the applicable development and regulatory process. Buyers should review official project documents before making any purchase decision."
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+const fs = require('fs');
+const cheerio = require('cheerio');
+const html = fs.readFileSync('residency-showcase/index.html', 'utf8');
+const $ = cheerio.load(html);
+console.log('features:', $('.elementor-element-b9c19da').find('.swiper').length);
+console.log('split:', $('.elementor-element-340d5d7').find('.swiper').length);
+console.log('features-container:', $('.elementor-element-b9c19da').find('.swiper-container').length);
+console.log('split-container:', $('.elementor-element-340d5d7').find('.swiper-container').length);
+console.log('slider in features:', $('.elementor-element-b9c19da').find('[class*="slider"]').length);
+console.log('carousel in split:', $('.elementor-element-340d5d7').find('[class*="carousel"]').length);

@@ -1,0 +1,9 @@
+{
+  "dependencies": {
+    "cheerio": "^1.2.0"
+  },
+  "scripts": {
+    "build": "node build-website.js",
+    "build:home": "node build-website.js && node post-process-homepage.js"
+  }
+}

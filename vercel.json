@@ -1,0 +1,5 @@
+{
+  "outputDirectory": "docs",
+  "buildCommand": "node build-website.js && node post-process-homepage.js && node prepare-deploy.js",
+  "installCommand": "npm install"
+}

@@ -143,6 +143,9 @@ for (const [pageKey, pageData] of Object.entries(contentData.pages)) {
         $('head').append('<link rel="stylesheet" href="assets/css/custom.css">');
     }
 
+    // Remove all scheme_dark classes globally to enforce our custom light ivory theme and fix text contrast
+    $('.scheme_dark').removeClass('scheme_dark');
+
     let isFirst = true;
     for (const [sectionKey, section] of Object.entries(pageData)) {
         if (sectionKey === 'seo') continue;
@@ -420,10 +423,19 @@ for (const [pageKey, pageData] of Object.entries(contentData.pages)) {
     
     // Add Footer Disclaimer
     if (contentData.global.footerDisclaimer) {
-        $('.sc_layouts_row_type_compact .sc_layouts_column_align_right').first().prepend(
-            '<div style="font-size: 0.8rem; line-height: 1.4; color: #888; padding-bottom: 10px; max-width: 600px;">' + contentData.global.footerDisclaimer + '</div>'
+        $('footer .elementor-container').first().append(
+            '<div style="font-size: 0.8rem; line-height: 1.4; color: #888; padding: 20px; max-width: 800px; text-align: left; border-top: 1px solid rgba(255,255,255,0.1); margin-top: 30px;">' + contentData.global.footerDisclaimer + '</div>'
         );
     }
+
+    // Remove unwanted template fluff
+    $('.sc_layouts_item_search').remove();
+    $('.sc_layouts_cart').remove();
+    $('.trx_demo_panels').remove();
+    $('.trx_addons_sticky_panel').remove();
+    $('.sc_layouts_iconed_text').remove();
+    $('.sc_layouts_login').remove();
+    $('header .elementor-widget-icon a.trx_addons_panel_link').closest('.elementor-widget-icon').remove();
 
     // Update global CTAs
     $('.sc_button_default').each((i, el) => {

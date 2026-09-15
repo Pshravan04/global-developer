@@ -980,530 +980,421 @@ var twemoji=function(){"use strict";var h={base:"https://cdn.jsdelivr.net/gh/jde
         </style>
     
 <style id="fno-homepage-css">
-/* ===== FNO HOMEPAGE PREMIUM STYLES ===== */
+/* ===== FNO HOMEPAGE ULTRA-PREMIUM STYLES ===== */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Outfit:wght@300;400;500;600&display=swap');
+
 :root {
-  --fno-green: #0d2b23;
-  --fno-gold: #c9a96e;
-  --fno-ivory: #f4efe6;
-  --fno-light: #f9f6f0;
-  --fno-text: #2d2d2d;
-  --fno-muted: #6b7280;
-  --fno-border: rgba(201,169,110,0.25);
+  --fno-green: #0A1F18;
+  --fno-green-light: #153228;
+  --fno-navy: #1B2A47;
+  --fno-gold: #D4AF37;
+  --fno-gold-light: #E8CC81;
+  --fno-ivory: #FDFBF7;
+  --fno-sand: #F2ECE0;
+  --fno-text: #2C3E38;
+  --fno-muted: #6C7A74;
 }
+
+body {
+  font-family: 'Outfit', sans-serif;
+  color: var(--fno-text);
+  background: var(--fno-ivory);
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Playfair Display', serif;
+}
+
+/* Animations */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes scaleIn {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+.animate-up { animation: fadeUp 1s cubic-bezier(0.2, 0.8, 0.2, 1) forwards; }
+.animate-scale { animation: scaleIn 1.2s cubic-bezier(0.2, 0.8, 0.2, 1) forwards; }
+.delay-1 { animation-delay: 0.2s; opacity: 0; }
+.delay-2 { animation-delay: 0.4s; opacity: 0; }
+.delay-3 { animation-delay: 0.6s; opacity: 0; }
+
+/* Global components */
+.fno-section-label {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  color: var(--fno-gold);
+  margin-bottom: 24px;
+  position: relative;
+}
+.fno-section-label::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 100%;
+  margin-left: 15px;
+  width: 40px;
+  height: 1px;
+  background: var(--fno-gold);
+}
+
+.fno-section-title {
+  font-size: clamp(2.2rem, 4vw, 3.5rem);
+  font-weight: 600;
+  line-height: 1.15;
+  margin-bottom: 30px;
+}
+
+.fno-btn-primary {
+  background: var(--fno-gold);
+  color: var(--fno-green);
+  padding: 16px 36px;
+  font-weight: 500;
+  font-size: 0.9rem;
+  font-family: 'Outfit', sans-serif;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  text-decoration: none;
+  border-radius: 0;
+  transition: all 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  border: 1px solid var(--fno-gold);
+}
+.fno-btn-primary::after { content: '→'; font-size: 1.2rem; transition: transform 0.3s; }
+.fno-btn-primary:hover { background: transparent; color: var(--fno-gold); }
+.fno-btn-primary:hover::after { transform: translateX(5px); }
+
+.fno-btn-outline {
+  background: transparent;
+  color: var(--fno-ivory);
+  padding: 16px 36px;
+  font-weight: 500;
+  font-size: 0.9rem;
+  font-family: 'Outfit', sans-serif;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  text-decoration: none;
+  border-radius: 0;
+  transition: all 0.4s;
+  display: inline-flex;
+  align-items: center;
+  border: 1px solid rgba(253,251,247,0.3);
+}
+.fno-btn-outline:hover { border-color: var(--fno-gold); color: var(--fno-gold); background: rgba(212,175,55,0.05); }
 
 /* ===== HERO SECTION ===== */
 .fno-hero {
   position: relative;
-  min-height: 92vh;
+  min-height: 100vh;
   display: flex;
-  align-items: flex-end;
-  overflow: hidden;
+  align-items: center;
   background: var(--fno-green);
+  overflow: hidden;
 }
 .fno-hero-bg {
   position: absolute;
   inset: 0;
-  background: linear-gradient(135deg, #0d2b23 0%, #1a4a36 50%, #0d2b23 100%);
-  z-index: 0;
+  background: url('assets/images/hero-bg.jpg') center/cover no-repeat;
+  opacity: 0.25;
+  transform: scale(1.05);
+  animation: slowZoom 20s infinite alternate linear;
 }
-.fno-hero-bg::after {
-  content: '';
+@keyframes slowZoom {
+  0% { transform: scale(1); }
+  100% { transform: scale(1.1); }
+}
+.fno-hero-overlay {
   position: absolute;
   inset: 0;
-  background: url('assets/images/hero-bg.jpg') center/cover no-repeat;
-  opacity: 0.35;
-  mix-blend-mode: luminosity;
+  background: linear-gradient(135deg, rgba(10,31,24,0.95) 0%, rgba(10,31,24,0.7) 100%);
 }
 .fno-hero-inner {
   position: relative;
   z-index: 2;
   width: 100%;
-  max-width: 1320px;
+  max-width: 1400px;
   margin: 0 auto;
-  padding: 120px 40px 80px;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 60px;
-  align-items: end;
-}
-.fno-hero-left {}
-.fno-hero-eyebrow {
-  font-size: 0.78rem;
-  font-weight: 600;
-  letter-spacing: 4px;
-  text-transform: uppercase;
-  color: var(--fno-gold);
-  margin-bottom: 20px;
-  display: block;
-}
-.fno-hero-title {
-  font-size: clamp(2.6rem, 5vw, 4.2rem);
-  font-weight: 700;
-  color: #fff;
-  line-height: 1.1;
-  margin: 0 0 16px;
-}
-.fno-hero-tagline {
-  font-size: 1rem;
-  font-weight: 500;
-  color: var(--fno-gold);
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  margin-bottom: 32px;
-  border-left: 3px solid var(--fno-gold);
-  padding-left: 16px;
-}
-.fno-hero-btns {
-  display: flex;
-  gap: 16px;
-  flex-wrap: wrap;
-  margin-top: 16px;
-}
-.fno-btn-primary {
-  background: var(--fno-gold);
-  color: var(--fno-green);
-  padding: 14px 32px;
-  font-weight: 700;
-  font-size: 0.85rem;
-  letter-spacing: 1.5px;
-  text-transform: uppercase;
-  text-decoration: none;
-  border-radius: 2px;
-  transition: all 0.3s;
-  display: inline-block;
-}
-.fno-btn-primary:hover { background: #e0bc80; transform: translateY(-2px); }
-.fno-btn-outline {
-  background: transparent;
-  color: #fff;
-  padding: 14px 32px;
-  font-weight: 600;
-  font-size: 0.85rem;
-  letter-spacing: 1.5px;
-  text-transform: uppercase;
-  text-decoration: none;
-  border-radius: 2px;
-  border: 1.5px solid rgba(255,255,255,0.5);
-  transition: all 0.3s;
-  display: inline-block;
-}
-.fno-btn-outline:hover { border-color: var(--fno-gold); color: var(--fno-gold); }
-.fno-hero-right {
-  padding-bottom: 10px;
-}
-.fno-hero-desc {
-  color: rgba(255,255,255,0.8);
-  font-size: 1.05rem;
-  line-height: 1.8;
-  margin-bottom: 24px;
-}
-.fno-hero-bottom-line {
-  font-size: 1.2rem;
-  font-weight: 700;
-  color: var(--fno-gold);
-  letter-spacing: 3px;
-  text-transform: uppercase;
-  opacity: 0.9;
-}
-
-/* ===== INTRO SECTION ===== */
-.fno-intro {
-  background: var(--fno-ivory);
-  padding: 100px 40px;
-}
-.fno-intro-inner {
-  max-width: 800px;
-  margin: 0 auto;
-  text-align: center;
-}
-.fno-section-label {
-  display: inline-block;
-  font-size: 0.72rem;
-  font-weight: 700;
-  letter-spacing: 4px;
-  text-transform: uppercase;
-  color: var(--fno-gold);
-  margin-bottom: 20px;
-}
-.fno-section-title {
-  font-size: clamp(1.8rem, 3.5vw, 2.6rem);
-  font-weight: 700;
-  color: var(--fno-green);
-  margin-bottom: 30px;
-  line-height: 1.25;
-}
-.fno-intro p {
-  color: var(--fno-muted);
-  font-size: 1.05rem;
-  line-height: 1.85;
-  margin-bottom: 18px;
-}
-.fno-divider {
-  width: 60px;
-  height: 3px;
-  background: var(--fno-gold);
-  margin: 0 auto 40px;
-  border-radius: 2px;
-}
-
-/* ===== WHY CHOOSE ===== */
-.fno-why {
-  background: var(--fno-green);
-  padding: 100px 40px;
-}
-.fno-why-inner {
-  max-width: 1200px;
-  margin: 0 auto;
-}
-.fno-why-header {
-  text-align: center;
-  margin-bottom: 64px;
-}
-.fno-why-header .fno-section-title { color: #fff; }
-.fno-why-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 2px;
-}
-.fno-why-card {
-  background: rgba(255,255,255,0.04);
-  border: 1px solid rgba(201,169,110,0.18);
-  padding: 40px 32px;
-  transition: all 0.3s;
-  position: relative;
-  overflow: hidden;
-}
-.fno-why-card::before {
-  content: '';
-  position: absolute;
-  bottom: 0; left: 0; right: 0;
-  height: 3px;
-  background: var(--fno-gold);
-  transform: scaleX(0);
-  transition: transform 0.3s;
-}
-.fno-why-card:hover { background: rgba(255,255,255,0.07); }
-.fno-why-card:hover::before { transform: scaleX(1); }
-.fno-why-num {
-  font-size: 3rem;
-  font-weight: 800;
-  color: rgba(201,169,110,0.18);
-  line-height: 1;
-  margin-bottom: 12px;
-}
-.fno-why-card h3 {
-  font-size: 1.05rem;
-  font-weight: 700;
-  color: var(--fno-gold);
-  margin-bottom: 14px;
-  line-height: 1.3;
-}
-.fno-why-card p {
-  color: rgba(255,255,255,0.65);
-  font-size: 0.9rem;
-  line-height: 1.75;
-}
-.fno-why-card.span-2 { grid-column: span 2; }
-
-/* ===== LEADERSHIP ===== */
-.fno-leadership {
-  background: var(--fno-light);
-  padding: 100px 40px;
-}
-.fno-leadership-inner {
-  max-width: 1200px;
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: 1fr 1.5fr;
-  gap: 80px;
-  align-items: center;
-}
-.fno-leadership-left {}
-.fno-leadership-left .fno-section-title { text-align: left; margin-bottom: 16px; }
-.fno-leadership-badge {
-  display: inline-block;
-  background: var(--fno-green);
-  color: #fff;
-  font-size: 0.72rem;
-  letter-spacing: 3px;
-  text-transform: uppercase;
-  padding: 8px 18px;
-  margin-top: 24px;
-  font-weight: 600;
-}
-.fno-leadership-right {}
-.fno-leadership-subtitle {
-  font-size: 1.3rem;
-  font-weight: 700;
-  color: var(--fno-green);
-  margin-bottom: 20px;
-  line-height: 1.3;
-}
-.fno-leadership-right p {
-  color: var(--fno-muted);
-  font-size: 0.975rem;
-  line-height: 1.8;
-  margin-bottom: 16px;
-}
-.fno-team-list {
-  list-style: none;
-  padding: 0;
-  margin: 28px 0;
-  border-top: 1px solid var(--fno-border);
-}
-.fno-team-list li {
-  padding: 14px 0;
-  border-bottom: 1px solid var(--fno-border);
-  color: var(--fno-text);
-  font-size: 0.95rem;
-  display: flex;
-  align-items: center;
-  gap: 12px;
-}
-.fno-team-list li::before {
-  content: '';
-  display: block;
-  width: 6px;
-  height: 6px;
-  background: var(--fno-gold);
-  border-radius: 50%;
-  flex-shrink: 0;
-}
-
-/* ===== MARKET INSIGHT ===== */
-.fno-insight {
-  background: #fff;
-  padding: 100px 40px;
-  position: relative;
-  overflow: hidden;
-}
-.fno-insight::before {
-  content: '"';
-  position: absolute;
-  top: -40px; right: 60px;
-  font-size: 20rem;
-  font-weight: 900;
-  color: rgba(201,169,110,0.06);
-  line-height: 1;
-  pointer-events: none;
-}
-.fno-insight-inner {
-  max-width: 1000px;
-  margin: 0 auto;
-}
-.fno-insight-inner .fno-section-title { max-width: 720px; }
-.fno-insight-inner p {
-  color: var(--fno-muted);
-  font-size: 1.05rem;
-  line-height: 1.85;
-  margin-bottom: 18px;
-}
-
-/* ===== UPCOMING PROJECT ===== */
-.fno-upcoming {
-  background: var(--fno-green);
-  padding: 100px 40px;
-  position: relative;
-  overflow: hidden;
-}
-.fno-upcoming::after {
-  content: '';
-  position: absolute;
-  top: -100px; right: -100px;
-  width: 500px; height: 500px;
-  background: radial-gradient(circle, rgba(201,169,110,0.12), transparent 70%);
-  pointer-events: none;
-}
-.fno-upcoming-inner {
-  max-width: 1200px;
-  margin: 0 auto;
+  padding: 180px 40px 100px; /* high top padding to avoid header overlap */
   display: grid;
   grid-template-columns: 1.2fr 1fr;
   gap: 80px;
   align-items: center;
 }
-.fno-upcoming .fno-section-title { color: #fff; margin-bottom: 12px; }
-.fno-upcoming-subtitle {
-  color: var(--fno-gold);
-  font-size: 1rem;
-  font-weight: 600;
-  letter-spacing: 1px;
-  margin-bottom: 28px;
+.fno-hero-eyebrow {
+  font-size: 0.85rem;
+  font-weight: 500;
+  letter-spacing: 6px;
   text-transform: uppercase;
-}
-.fno-upcoming p {
-  color: rgba(255,255,255,0.7);
-  font-size: 0.975rem;
-  line-height: 1.8;
-  margin-bottom: 16px;
-}
-.fno-upcoming-details {
-  background: rgba(255,255,255,0.05);
-  border: 1px solid rgba(201,169,110,0.25);
-  padding: 36px;
-  border-radius: 4px;
-}
-.fno-upcoming-details h4 {
   color: var(--fno-gold);
-  font-size: 0.78rem;
-  letter-spacing: 3px;
-  text-transform: uppercase;
-  margin-bottom: 24px;
-  font-weight: 600;
+  margin-bottom: 30px;
+  display: block;
 }
-.fno-detail-row {
-  padding: 14px 0;
-  border-bottom: 1px solid rgba(201,169,110,0.15);
-  color: rgba(255,255,255,0.8);
-  font-size: 0.9rem;
+.fno-hero-title {
+  font-size: clamp(3rem, 6vw, 5rem);
+  font-weight: 500;
+  color: var(--fno-ivory);
+  line-height: 1.05;
+  margin: 0 0 24px;
+}
+.fno-hero-tagline {
+  font-size: 1.2rem;
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  color: var(--fno-gold-light);
+  margin-bottom: 40px;
+  border-left: 2px solid var(--fno-gold);
+  padding-left: 20px;
+}
+.fno-hero-btns {
   display: flex;
-  gap: 12px;
-  align-items: flex-start;
+  gap: 20px;
+  flex-wrap: wrap;
 }
-.fno-detail-row:last-child { border-bottom: none; }
-.fno-detail-row::before {
-  content: '→';
-  color: var(--fno-gold);
+.fno-hero-right {
+  background: rgba(255,255,255,0.03);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255,255,255,0.08);
+  padding: 50px;
+}
+.fno-hero-desc {
+  color: rgba(253,251,247,0.85);
+  font-size: 1.1rem;
+  line-height: 1.8;
+  font-weight: 300;
+  margin-bottom: 30px;
+}
+.fno-hero-bottom-line {
   font-size: 1rem;
-  flex-shrink: 0;
-  margin-top: 1px;
+  font-weight: 500;
+  color: var(--fno-gold);
+  letter-spacing: 4px;
+  text-transform: uppercase;
 }
 
-/* ===== LIFESTYLE + CLEAN ENV ===== */
-.fno-lifestyle {
-  background: var(--fno-ivory);
-  padding: 100px 40px;
+/* ===== SHARED SECTIONS ===== */
+.fno-section {
+  padding: 120px 40px;
+  position: relative;
 }
-.fno-clean {
-  background: var(--fno-light);
-  padding: 80px 40px;
-}
-.fno-lifestyle-inner, .fno-clean-inner {
-  max-width: 900px;
-  margin: 0 auto;
-}
-.fno-lifestyle p, .fno-clean p {
-  color: var(--fno-muted);
-  font-size: 1.05rem;
-  line-height: 1.85;
-  margin-bottom: 18px;
-}
-.fno-lifestyle .fno-section-title,
-.fno-clean .fno-section-title {
-  margin-bottom: 28px;
-}
-
-/* ===== PORTFOLIO ===== */
-.fno-portfolio {
-  background: var(--fno-green);
-  padding: 100px 40px;
-}
-.fno-portfolio-inner {
+.fno-section-inner {
   max-width: 1200px;
   margin: 0 auto;
+}
+.fno-bg-ivory { background: var(--fno-ivory); }
+.fno-bg-sand { background: var(--fno-sand); }
+.fno-bg-green { background: var(--fno-green); color: var(--fno-ivory); }
+.fno-bg-green .fno-section-title { color: var(--fno-ivory); }
+.fno-bg-green p { color: rgba(253,251,247,0.8); }
+
+/* ===== OUR STORY ===== */
+.fno-story {
+  text-align: center;
+  max-width: 900px !important;
+}
+.fno-story p {
+  font-size: 1.15rem;
+  line-height: 1.9;
+  color: var(--fno-text);
+  margin-bottom: 24px;
+  font-weight: 300;
+}
+.fno-story p:first-of-type {
+  font-size: 1.4rem;
+  font-family: 'Playfair Display', serif;
+  color: var(--fno-green);
+}
+
+/* ===== WHY CHOOSE ===== */
+.fno-why-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 30px;
+  margin-top: 60px;
+}
+.fno-why-card {
+  background: var(--fno-green-light);
+  padding: 50px 40px;
+  transition: transform 0.4s, background 0.4s;
+  border: 1px solid rgba(212,175,55,0.1);
+}
+.fno-why-card:hover {
+  transform: translateY(-10px);
+  background: #193c30;
+  border-color: rgba(212,175,55,0.3);
+}
+.fno-why-num {
+  font-size: 3.5rem;
+  font-family: 'Playfair Display', serif;
+  color: rgba(212,175,55,0.2);
+  line-height: 1;
+  margin-bottom: 20px;
+}
+.fno-why-card h3 {
+  font-size: 1.3rem;
+  color: var(--fno-ivory);
+  margin-bottom: 16px;
+  letter-spacing: 1px;
+}
+.fno-why-card p {
+  color: rgba(253,251,247,0.7);
+  font-size: 0.95rem;
+  line-height: 1.7;
+  font-weight: 300;
+}
+
+/* ===== LEADERSHIP ===== */
+.fno-leadership-inner {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 80px;
   align-items: center;
 }
-.fno-portfolio .fno-section-label { color: rgba(201,169,110,0.7); }
-.fno-portfolio .fno-section-title { color: #fff; }
-.fno-portfolio-subtitle {
-  color: var(--fno-gold);
+.fno-leadership-left h2 { color: var(--fno-green); }
+.fno-leadership-right p {
   font-size: 1.1rem;
-  font-weight: 600;
-  margin-bottom: 6px;
-}
-.fno-portfolio-badge {
-  display: inline-block;
-  background: var(--fno-gold);
-  color: var(--fno-green);
-  font-size: 0.7rem;
-  font-weight: 700;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  padding: 5px 14px;
-  border-radius: 2px;
-  margin-bottom: 28px;
-}
-.fno-portfolio p {
-  color: rgba(255,255,255,0.7);
-  font-size: 0.975rem;
   line-height: 1.8;
-  margin-bottom: 16px;
+  margin-bottom: 20px;
+  font-weight: 300;
 }
-.fno-portfolio-visual {
-  background: rgba(255,255,255,0.04);
-  border: 1px solid rgba(201,169,110,0.2);
-  padding: 60px 40px;
-  text-align: center;
-  border-radius: 4px;
+.fno-team-list {
+  list-style: none;
+  padding: 0;
+  margin: 40px 0;
+  display: grid;
+  gap: 15px;
 }
-.fno-portfolio-logo-text {
-  font-size: 1.6rem;
-  font-weight: 800;
+.fno-team-list li {
+  padding-bottom: 15px;
+  border-bottom: 1px solid rgba(10,31,24,0.1);
+  color: var(--fno-green);
+  font-size: 1.05rem;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+.fno-team-list li::before {
+  content: '✦';
   color: var(--fno-gold);
-  letter-spacing: 3px;
-  margin-bottom: 8px;
-}
-.fno-portfolio-visual-label {
-  color: rgba(255,255,255,0.4);
-  font-size: 0.8rem;
-  letter-spacing: 2px;
-  text-transform: uppercase;
+  font-size: 1.2rem;
 }
 
-/* ===== FINAL CTA ===== */
-.fno-final-cta {
-  background: linear-gradient(135deg, #0d2b23 0%, #1a5c3a 100%);
-  padding: 120px 40px;
+/* ===== UPCOMING PROJECT ===== */
+.fno-upcoming {
   text-align: center;
-  position: relative;
-  overflow: hidden;
 }
-.fno-final-cta::before {
+.fno-upcoming .fno-section-title {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+}
+.fno-upcoming-subtitle {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.5rem;
+  color: var(--fno-gold);
+  margin-bottom: 40px;
+  font-style: italic;
+}
+.fno-upcoming-content {
+  max-width: 800px;
+  margin: 0 auto 50px;
+}
+.fno-upcoming-content p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  margin-bottom: 20px;
+  font-weight: 300;
+}
+.fno-details-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 50px;
+}
+.fno-detail-badge {
+  background: rgba(212,175,55,0.1);
+  border: 1px solid rgba(212,175,55,0.3);
+  color: var(--fno-ivory);
+  padding: 12px 24px;
+  font-size: 0.9rem;
+  letter-spacing: 1px;
+}
+
+/* ===== PORTFOLIO ===== */
+.fno-portfolio-inner {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 80px;
+  align-items: center;
+}
+.fno-portfolio-visual {
+  background: url('assets/images/portfolio-bg.jpg') center/cover no-repeat;
+  background-color: var(--fno-green-light); /* fallback */
+  height: 500px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 10px solid var(--fno-ivory);
+  box-shadow: 0 20px 50px rgba(0,0,0,0.1);
+}
+.fno-portfolio-visual::before {
   content: '';
   position: absolute;
   inset: 0;
-  background: radial-gradient(ellipse at center, rgba(201,169,110,0.1), transparent 70%);
+  background: rgba(10,31,24,0.6);
 }
-.fno-final-cta-inner {
+.fno-portfolio-logo-text {
   position: relative;
-  max-width: 700px;
-  margin: 0 auto;
+  font-size: 2.5rem;
+  font-family: 'Playfair Display', serif;
+  color: var(--fno-gold);
+  margin-bottom: 15px;
 }
-.fno-final-cta .fno-section-title { color: #fff; margin-bottom: 20px; }
-.fno-final-cta p {
-  color: rgba(255,255,255,0.7);
-  font-size: 1.05rem;
-  line-height: 1.8;
-  margin-bottom: 40px;
+.fno-portfolio-visual-label {
+  position: relative;
+  color: var(--fno-ivory);
+  font-size: 1.2rem;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  text-align: center;
 }
-.fno-cta-btns {
-  display: flex;
-  gap: 16px;
-  justify-content: center;
-  flex-wrap: wrap;
+.fno-sold-out {
+  position: absolute;
+  top: 30px;
+  right: 30px;
+  background: #a93226;
+  color: #fff;
+  padding: 8px 16px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
 }
 
 /* ===== RESPONSIVE ===== */
-@media (max-width: 900px) {
-  .fno-hero-inner,
-  .fno-leadership-inner,
-  .fno-upcoming-inner,
-  .fno-portfolio-inner {
+@media (max-width: 991px) {
+  .fno-hero-inner, .fno-leadership-inner, .fno-portfolio-inner {
     grid-template-columns: 1fr;
-    gap: 40px;
+    gap: 50px;
   }
-  .fno-why-grid { grid-template-columns: 1fr 1fr; }
-  .fno-why-card.span-2 { grid-column: span 1; }
+  .fno-hero-inner { padding-top: 140px; }
 }
-@media (max-width: 600px) {
-  .fno-hero, .fno-intro, .fno-why, .fno-leadership,
-  .fno-insight, .fno-upcoming, .fno-lifestyle, .fno-clean,
-  .fno-portfolio, .fno-final-cta { padding: 60px 20px; }
-  .fno-why-grid { grid-template-columns: 1fr; }
-  .fno-hero-inner { padding: 100px 20px 60px; }
+@media (max-width: 767px) {
+  .fno-section { padding: 80px 20px; }
+  .fno-hero-inner { padding-top: 120px; }
+  .fno-hero-right { padding: 30px; }
+  .fno-why-card { padding: 30px; }
+  .fno-btn-primary, .fno-btn-outline { width: 100%; justify-content: center; }
 }
 </style>
 </head><body class="wp-singular page-template-default page page-id-22623 wp-custom-logo wp-embed-responsive wp-theme-manoir theme-manoir hide_fixed_rows_enabled woocommerce-js tinvwl-theme-style skin_default scheme_default blog_mode_page body_style_fullscreen is_single sidebar_hide expand_content remove_margins trx_addons_present header_type_custom header_style_header-custom-22291 header_position_over menu_side_none fixed_blocks_sticky elementor-default elementor-kit-15 elementor-page elementor-page-22623 e--ua-blink e--ua-chrome e--ua-webkit ua_blink ua_webkit ua_chrome animate_to_inited added_to_cart_inited desktop_layout trx_addons_image_effects_planes_loaded" data-elementor-device-mode="tablet" cz-shortcut-listen="true">
@@ -1541,7 +1432,7 @@ var twemoji=function(){"use strict";var h={base:"https://cdn.jsdelivr.net/gh/jde
 			
 			<header class="top_panel top_panel_custom top_panel_custom_22291 top_panel_custom_header-menu-center				 without_bg_image">
 			<div data-elementor-type="cpt_layouts" data-elementor-id="22291" class="elementor elementor-22291">
-						<section class="elementor-section elementor-top-section elementor-element elementor-element-70aaab6f elementor-section-full_width scheme_dark elementor-section-height-default elementor-section-height-default sc_fly_static trx_addons_parallax_layers_inited trx_addons_parallax_blocks_inited" data-id="70aaab6f" data-element_type="section">
+						<section class="elementor-section elementor-top-section elementor-element elementor-element-70aaab6f elementor-section-full_width elementor-section-height-default elementor-section-height-default sc_fly_static trx_addons_parallax_layers_inited trx_addons_parallax_blocks_inited" data-id="70aaab6f" data-element_type="section">
 						<div class="elementor-container elementor-column-gap-no">
 					<div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-7d6fbf48 sc_content_align_inherit sc_layouts_column_icons_position_left sc_fly_static trx_addons_parallax_layers_inited trx_addons_parallax_blocks_inited" data-id="7d6fbf48" data-element_type="column">
 			<div class="elementor-widget-wrap elementor-element-populated">
@@ -1573,39 +1464,18 @@ var twemoji=function(){"use strict";var h={base:"https://cdn.jsdelivr.net/gh/jde
 				</div>
 					</div>
 		</div>
-				<div class="elementor-column elementor-col-33 elementor-inner-column elementor-element elementor-element-3610b2e1 sc_layouts_column_align_right sc_layouts_column sc_content_align_inherit sc_layouts_column_icons_position_left sc_fly_static trx_addons_parallax_layers_inited trx_addons_parallax_blocks_inited" data-id="3610b2e1" data-element_type="column"><div style="font-size: 0.8rem; line-height: 1.4; color: #888; padding-bottom: 10px; max-width: 600px;">Project details, plans, specifications, pricing, approvals and availability are subject to change and will be shared as per the applicable development and regulatory process. This website is for information and early-interest purposes only. Buyers are advised to review all project documents and official details before making any purchase decision.</div>
+				<div class="elementor-column elementor-col-33 elementor-inner-column elementor-element elementor-element-3610b2e1 sc_layouts_column_align_right sc_layouts_column sc_content_align_inherit sc_layouts_column_icons_position_left sc_fly_static trx_addons_parallax_layers_inited trx_addons_parallax_blocks_inited" data-id="3610b2e1" data-element_type="column">
 			<div class="elementor-widget-wrap elementor-element-populated">
 						<div class="sc_layouts_item elementor-element elementor-element-4085cb91 sc_fly_static elementor-widget elementor-widget-trx_sc_layouts_cart trx_addons_parallax_layers_inited trx_addons_parallax_blocks_inited" data-id="4085cb91" data-element_type="widget" data-widget_type="trx_sc_layouts_cart.default">
 				<div class="elementor-widget-container">
-					<div class="sc_layouts_cart sc_layouts_cart_market_woocommerce inited">
-					<span class="sc_layouts_item_icon sc_layouts_cart_icon sc_icon_type_icons trx_addons_icon-basket"></span>
-		
-		<span class="sc_layouts_item_details sc_layouts_cart_details">
-						<span class="sc_layouts_item_details_line2 sc_layouts_cart_totals">
-				<span class="sc_layouts_cart_items" data-item="item" data-items="items">0 items</span>
-				<span class="sc_layouts_cart_summa_delimiter">-</span>
-				<span class="sc_layouts_cart_summa">0</span>
-			</span>
-		</span>
-		<span class="sc_layouts_cart_items_short">0</span>
-		<div class="sc_layouts_cart_widget widget_area">
-			<span class="sc_layouts_cart_widget_close trx_addons_button_close">
-									<span class="sc_layouts_cart_widget_close_icon trx_addons_button_close_icon"></span>
-							</span>
-			<div class="widget woocommerce widget_shopping_cart"><div class="widget_shopping_cart_content">
-
-	<p class="woocommerce-mini-cart__empty-message">No products in the cart.</p>
-
-
-</div></div>		</div>
-	</div>				</div>
+									</div>
 				</div>
 				<div class="sc_layouts_item elementor-element elementor-element-53e7df27 sc_fly_static elementor-widget elementor-widget-trx_sc_layouts_search trx_addons_parallax_layers_inited trx_addons_parallax_blocks_inited" data-id="53e7df27" data-element_type="widget" data-widget_type="trx_sc_layouts_search.default">
 				<div class="elementor-widget-container">
 					<div class="sc_layouts_search">
     <div class="search_modern">
         <span class="search_submit"></span>
-        <div class="search_wrap scheme_dark inited">
+        <div class="search_wrap inited">
             <div class="search_header_wrap"><img class="logo_image" src="assets/images/b646a2e13739d3e6730246e78e72f17d.png" alt="Manoir" width="204" height="58">                <a class="search_close"></a>
             </div>
             <div class="search_form_wrap">
@@ -1616,20 +1486,13 @@ var twemoji=function(){"use strict";var h={base:"https://cdn.jsdelivr.net/gh/jde
                                     </form>
             </div>
         </div>
-        <div class="search_overlay scheme_dark"></div>
+        <div class="search_overlay"></div>
     </div>
 
 
 </div><!-- /.sc_layouts_search -->				</div>
 				</div>
-				<div class="sc_layouts_item elementor-element elementor-element-2968b37f elementor-view-default sc_fly_static elementor-widget elementor-widget-icon trx_addons_parallax_layers_inited trx_addons_parallax_blocks_inited" data-id="2968b37f" data-element_type="widget" data-widget_type="icon.default">
-				<div class="elementor-widget-container">
-							<div class="elementor-icon-wrapper">
-			<a class="elementor-icon trx_addons_panel_link panel_inited" href="index.html">
-			<svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" viewBox="0 0 21 21"><g transform="translate(-2124 -2665)"><path d="M2.5,1.5a1,1,0,1,0,1,1,1,1,0,0,0-1-1M2.5,0A2.5,2.5,0,1,1,0,2.5,2.5,2.5,0,0,1,2.5,0Z" transform="translate(2124 2665)"></path><path d="M2.5,1.5a1,1,0,1,0,1,1,1,1,0,0,0-1-1M2.5,0A2.5,2.5,0,1,1,0,2.5,2.5,2.5,0,0,1,2.5,0Z" transform="translate(2132 2665)"></path><path d="M2.5,1.5a1,1,0,1,0,1,1,1,1,0,0,0-1-1M2.5,0A2.5,2.5,0,1,1,0,2.5,2.5,2.5,0,0,1,2.5,0Z" transform="translate(2140 2665)"></path><path d="M2.5,1.5a1,1,0,1,0,1,1,1,1,0,0,0-1-1M2.5,0A2.5,2.5,0,1,1,0,2.5,2.5,2.5,0,0,1,2.5,0Z" transform="translate(2124 2673)"></path><path d="M2.5,1.5a1,1,0,1,0,1,1,1,1,0,0,0-1-1M2.5,0A2.5,2.5,0,1,1,0,2.5,2.5,2.5,0,0,1,2.5,0Z" transform="translate(2132 2673)"></path><path d="M2.5,1.5a1,1,0,1,0,1,1,1,1,0,0,0-1-1M2.5,0A2.5,2.5,0,1,1,0,2.5,2.5,2.5,0,0,1,2.5,0Z" transform="translate(2140 2673)"></path><path d="M2.5,1.5a1,1,0,1,0,1,1,1,1,0,0,0-1-1M2.5,0A2.5,2.5,0,1,1,0,2.5,2.5,2.5,0,0,1,2.5,0Z" transform="translate(2124 2681)"></path><path d="M2.5,1.5a1,1,0,1,0,1,1,1,1,0,0,0-1-1M2.5,0A2.5,2.5,0,1,1,0,2.5,2.5,2.5,0,0,1,2.5,0Z" transform="translate(2132 2681)"></path><path d="M2.5,1.5a1,1,0,1,0,1,1,1,1,0,0,0-1-1M2.5,0A2.5,2.5,0,1,1,0,2.5,2.5,2.5,0,0,1,2.5,0Z" transform="translate(2140 2681)"></path></g></svg>			</a>
-		</div>
-						</div>
-				</div>
+				
 					</div>
 		</div>
 					</div>
@@ -1641,8 +1504,8 @@ var twemoji=function(){"use strict";var h={base:"https://cdn.jsdelivr.net/gh/jde
 				
 				</div>
 		</header>
-<div class="menu_mobile_overlay scheme_dark inited_click" style="display: none;"></div>
-<div class="menu_mobile menu_mobile_fullscreen scheme_dark inited_blur inited_arrows inited_click">
+<div class="menu_mobile_overlay inited_click" style="display: none;"></div>
+<div class="menu_mobile menu_mobile_fullscreen inited_blur inited_arrows inited_click">
 	<div class="menu_mobile_inner with_widgets">
         <div class="menu_mobile_header_wrap">
             <a class="sc_layouts_logo" href="../index.html">
@@ -1709,8 +1572,9 @@ var twemoji=function(){"use strict";var h={base:"https://cdn.jsdelivr.net/gh/jde
 				
 <section class="fno-hero">
   <div class="fno-hero-bg"></div>
+  <div class="fno-hero-overlay"></div>
   <div class="fno-hero-inner">
-    <div class="fno-hero-left">
+    <div class="fno-hero-left animate-up">
       <span class="fno-hero-eyebrow">Focused Nationwide Opportunities</span>
       <h1 class="fno-hero-title">FNO Global Developers</h1>
       <p class="fno-hero-tagline">Premium Real Estate Destinations, Built with Vision and Experience</p>
@@ -1719,26 +1583,23 @@ var twemoji=function(){"use strict";var h={base:"https://cdn.jsdelivr.net/gh/jde
         <a href="contact-us.html" class="fno-btn-outline">Register Your Interest</a>
       </div>
     </div>
-    <div class="fno-hero-right">
-      <p class="fno-hero-desc">FNO Global Developers is a new-age real estate development company founded in 2025. The brand is young, but the experience behind it is strong. Our promoters bring nearly four decades of understanding in real estate, luxury construction, business, investments and long-term value creation. We focus on identifying promising locations and shaping them into premium real estate destinations with better planning, stronger lifestyle appeal and a future-ready vision.</p>
+    <div class="fno-hero-right animate-scale delay-1">
+      <div class="fno-hero-desc"><p>FNO Global Developers is a new-age real estate development company founded in 2025. The brand is young, but the experience behind it is strong. Our promoters bring nearly four decades of understanding in real estate, luxury construction, business, investments and long-term value creation. We focus on identifying promising locations and shaping them into premium real estate destinations with better planning, stronger lifestyle appeal and a future-ready vision.</p></div>
       <div class="fno-hero-bottom-line">Luxury. Location. Legacy.</div>
     </div>
   </div>
 </section>
-<section class="fno-intro">
-  <div class="fno-intro-inner">
+<section class="fno-section fno-bg-ivory">
+  <div class="fno-section-inner fno-story animate-up">
     <span class="fno-section-label">Our Story</span>
     <h2 class="fno-section-title">A New Brand Backed by Four Decades of Real Estate Experience</h2>
-    <div class="fno-divider"></div>
     <p>Real estate is not built only with land and structure. It is built with timing, location understanding, construction quality, trust and a clear vision for the future.</p><p>FNO Global Developers was created with this belief.</p><p>Started in 2025, the company brings together modern business thinking and decades of promoter experience. Our leadership has worked across real estate, luxury construction, investments and international client markets. This gives us a balanced approach: fresh ideas supported by real-world experience.</p><p>Our aim is to create developments that feel premium, practical and meaningful for the people who live in them, invest in them and associate with them.</p>
   </div>
 </section>
-<section class="fno-why">
-  <div class="fno-why-inner">
-    <div class="fno-why-header">
-      <span class="fno-section-label">Why FNO</span>
-      <h2 class="fno-section-title">Why Choose FNO Global Developers</h2>
-    </div>
+<section class="fno-section fno-bg-green">
+  <div class="fno-section-inner animate-up">
+    <span class="fno-section-label">Why Choose FNO</span>
+    <h2 class="fno-section-title">Why Choose FNO Global Developers</h2>
     <div class="fno-why-grid">
       
     <div class="fno-why-card">
@@ -1761,7 +1622,7 @@ var twemoji=function(){"use strict";var h={base:"https://cdn.jsdelivr.net/gh/jde
       <h3>Destination-Led Thinking</h3>
       <p>We look at real estate as a destination story. A good project should be connected, liveable, well-planned and aligned with the way people want to live in the future.</p>
     </div>
-    <div class="fno-why-card span-2">
+    <div class="fno-why-card">
       <div class="fno-why-num">05</div>
       <h3>Clear and Responsible Communication</h3>
       <p>We believe buyers deserve clarity. Project details, updates and next steps should be communicated in a simple and transparent way.</p>
@@ -1769,84 +1630,50 @@ var twemoji=function(){"use strict";var h={base:"https://cdn.jsdelivr.net/gh/jde
     </div>
   </div>
 </section>
-<section class="fno-leadership">
-  <div class="fno-leadership-inner">
+<section class="fno-section fno-bg-sand">
+  <div class="fno-section-inner fno-leadership-inner animate-up">
     <div class="fno-leadership-left">
-      <span class="fno-section-label">Who We Are</span>
+      <span class="fno-section-label">Leadership</span>
       <h2 class="fno-section-title">Promoters and Leadership Snapshot</h2>
-      <span class="fno-leadership-badge">Est. 2025</span>
+      <a href="about-us.html" class="fno-btn-primary" style="margin-top:20px;">Meet Our Promoters</a>
     </div>
     <div class="fno-leadership-right">
-      <p class="fno-leadership-subtitle">Led by Experience. Driven by a New Vision.</p>
-      <p>FNO Global Developers was founded in 2025, but the strength behind the company comes from promoters with nearly four decades of experience in real estate, luxury construction, investments, business growth and international client markets.</p><p>The leadership team brings together two strong generations: experienced promoters who understand real estate from the ground level, and young entrepreneurs who bring modern thinking, global exposure and a future-focused approach.</p>
+      <h3 style="font-size:1.5rem; color:var(--fno-gold); margin-bottom:20px;">Led by Experience. Driven by a New Vision.</h3>
+      <p>FNO Global Developers was founded in 2025, but the strength behind the company comes from promoters with nearly four decades of experience in real estate, luxury construction, investments, business growth and international client markets.<br><br>The leadership team brings together two strong generations: experienced promoters who understand real estate from the ground level, and young entrepreneurs who bring modern thinking, global exposure and a future-focused approach.</p>
       <ul class="fno-team-list">
         <li>Kunal Arora — Founder &amp; Managing Director</li><li>Spice Bindal — Founder &amp; Managing Director</li><li>Jugal Arora — Founder &amp; Chairman</li><li>Suman Bindal — Founder &amp; Chairman</li>
       </ul>
-      <a href="about-us.html" class="fno-btn-primary">Meet Our Promoters</a>
     </div>
   </div>
 </section>
-<section class="fno-insight">
-  <div class="fno-insight-inner">
-    <span class="fno-section-label">Market Insight</span>
-    <h2 class="fno-section-title">Why North of Goa Is Getting Stronger Attention</h2>
-    <div class="fno-divider" style="margin-left:0;"></div>
-    <p>Goa is no longer only a peak-season holiday market. It is moving towards year-round travel, wellness, workation, heritage, gastronomy, MICE, adventure and experience-led tourism. Recent tourism updates reported 61.38 lakh tourist arrivals between January and July 2026, including strong domestic travel and continued international interest.</p><p>This matters for real estate because buyers are looking at Goa differently now. Many are exploring second homes, private villa stays, work-from-anywhere spaces, wellness-led living and premium lifestyle addresses.</p><p>For FNO Global Developers, this shift supports our focus on North of Goa: a location direction where lifestyle, access, nature and future demand can come together.</p>
-  </div>
-</section>
-<section class="fno-upcoming">
-  <div class="fno-upcoming-inner">
-    <div>
-      <span class="fno-section-label">Upcoming Project</span>
-      <h2 class="fno-section-title">Coming Soon in North of Goa</h2>
-      <p class="fno-upcoming-subtitle">A Premium Villa Community with Direct NH-66 Connectivity</p>
+<section class="fno-section fno-bg-green fno-upcoming">
+  <div class="fno-section-inner animate-up">
+    <span class="fno-section-label" style="margin: 0 auto 24px;">Upcoming Project</span>
+    <h2 class="fno-section-title">Coming Soon in North of Goa</h2>
+    <div class="fno-upcoming-subtitle">A Premium Villa Community with Direct NH-66 Connectivity</div>
+    <div class="fno-upcoming-content">
       <p>FNO Global Developers is preparing to introduce a premium villa community in North of Goa, located opposite Aradhya Cinema with direct NH-66 connectivity.</p><p>This upcoming project is being planned for buyers who want more than just a property. It is for people who value space, privacy, natural surroundings, easier access and a refined lifestyle experience.</p><p>For now, the project page should remain focused on the location, the coming-soon status, the brand vision and early-interest registration.</p>
-      <a href="upcoming-project.html" class="fno-btn-primary" style="margin-top:16px;">Register Early Interest</a>
     </div>
-    <div class="fno-upcoming-details">
-      <h4>Project Details</h4>
-      <div class="fno-detail-row">Project Status: Coming Soon</div><div class="fno-detail-row">Location: Opposite Aradhya Cinema, North of Goa, NH-66</div><div class="fno-detail-row">Project Type: Premium Villa Community</div>
+    <div class="fno-details-grid">
+      <div class="fno-detail-badge">Project Status: Coming Soon</div><div class="fno-detail-badge">Location: Opposite Aradhya Cinema, North of Goa, NH-66</div><div class="fno-detail-badge">Project Type: Premium Villa Community</div>
     </div>
+    <a href="upcoming-project.html" class="fno-btn-primary">Register Early Interest</a>
   </div>
 </section>
-<section class="fno-lifestyle">
-  <div class="fno-lifestyle-inner">
-    <span class="fno-section-label">The Location</span>
-    <h2 class="fno-section-title">A Location Connected to Nature, Travel and Experiences</h2>
-    <div class="fno-divider" style="margin-left:0;"></div>
-    <p>North of Goa offers a rare mix of calm living, road connectivity, tourism movement and access to coastal experiences. The larger coastal belt around Goa also has a growing experience-led travel identity, with destinations such as Malvan and Tarkarli known for water sports, scuba diving and coastal adventure.</p><p>There is also new hospitality movement in the wider coastal belt, including a proposed Taj hotel project at Shiroda-Velaghar in Sindhudurg. Such updates show that the larger Goa-Konkan region is receiving attention for premium tourism and hospitality infrastructure.</p>
-  </div>
-</section>
-<section class="fno-clean">
-  <div class="fno-clean-inner">
-    <span class="fno-section-label">Why Goa</span>
-    <h2 class="fno-section-title">Cleaner Surroundings. Calmer Living.</h2>
-    <p>For many buyers from crowded cities, a home in Goa is not only about holidays. It is about breathing easier, living slower and finding a better everyday rhythm.</p><p>Goa’s cleaner coastal environment, open surroundings and slower pace continue to make it attractive for lifestyle-led living.</p>
-  </div>
-</section>
-<section class="fno-portfolio">
-  <div class="fno-portfolio-inner">
+<section class="fno-section fno-bg-ivory">
+  <div class="fno-section-inner fno-portfolio-inner animate-up">
     <div>
       <span class="fno-section-label">Our Work</span>
-      <h2 class="fno-section-title">Our Completed Luxury Villa Work</h2>
-      <p class="fno-portfolio-subtitle">Luxe Heaven Villas – Porvorim, North of Goa</p>
-      <div class="fno-portfolio-badge">Status: Sold Out</div>
-      <p>Luxe Heaven Villas is one of our earlier luxury villa developments in Porvorim, North of Goa. Designed with European-inspired elegance and a Goan lifestyle touch, the project reflected our focus on privacy, comfort, detailing and premium living.</p><p>The project included ultra-luxury fully furnished villas with modern bedrooms, private lift, swimming pool, terrace entertainment spaces, premium fittings, home theatre, smart security and fully loaded lifestyle features.</p>
+      <h2 class="fno-section-title" style="color:var(--fno-green);">Our Completed Luxury Villa Work</h2>
+      <h3 style="font-size:1.3rem; color:var(--fno-gold); margin-bottom:20px; font-family:'Outfit', sans-serif;">Luxe Heaven Villas – Porvorim, North of Goa</h3>
+      <div style="color:var(--fno-muted); margin-bottom:30px;">
+        <p>Luxe Heaven Villas is one of our earlier luxury villa developments in Porvorim, North of Goa. Designed with European-inspired elegance and a Goan lifestyle touch, the project reflected our focus on privacy, comfort, detailing and premium living.</p><p>The project included ultra-luxury fully furnished villas with modern bedrooms, private lift, swimming pool, terrace entertainment spaces, premium fittings, home theatre, smart security and fully loaded lifestyle features.</p>
+      </div>
     </div>
     <div class="fno-portfolio-visual">
+      <div class="fno-sold-out">Sold Out</div>
       <div class="fno-portfolio-logo-text">FNO</div>
-      <div class="fno-portfolio-visual-label">Luxe Heaven Villas<br>Porvorim · North Goa</div>
-    </div>
-  </div>
-</section>
-<section class="fno-final-cta">
-  <div class="fno-final-cta-inner">
-    <span class="fno-section-label" style="color:rgba(201,169,110,0.7);">Get Started</span>
-    <h2 class="fno-section-title">Be Among the First to Know</h2>
-    <p>A premium villa community is coming soon in North of Goa. Register your interest today to receive project updates, location details, private preview information and launch communication from FNO Global Developers.</p>
-    <div class="fno-cta-btns">
-      <a href="contact-us.html" class="fno-btn-primary">Register Your Interest</a>
-      <a href="contact-us.html" class="fno-btn-outline">Speak With Our Team</a>
+      <div class="fno-portfolio-visual-label">Luxe Heaven Villas<br><span style="font-size:0.8rem; font-weight:400; opacity:0.8;">Porvorim · North Goa</span></div>
     </div>
   </div>
 </section></div>
@@ -1858,7 +1685,7 @@ var twemoji=function(){"use strict";var h={base:"https://cdn.jsdelivr.net/gh/jde
 											</div>
 								</div>
 							<span id="footer_skip_link_anchor" class="manoir_skip_link_anchor"></span>
-				<footer class="footer_wrap footer_custom footer_custom_16866 footer_custom_footer-double						 scheme_dark						">
+				<footer class="footer_wrap footer_custom footer_custom_16866 footer_custom_footer-double">
 			<div data-elementor-type="cpt_layouts" data-elementor-id="16866" class="elementor elementor-16866">
 						
 				</div>
@@ -11727,7 +11554,7 @@ var e="script#wp-emoji-settings",t=document.querySelector(e);if(!(t instanceof H
 			<script async="">!function(){try{var e="undefined"!=typeof window?window:"undefined"!=typeof global?global:"undefined"!=typeof globalThis?globalThis:"undefined"!=typeof self?self:{},t=(new e.Error).stack;t&&(e._sentryDebugIds=e._sentryDebugIds||{},e._sentryDebugIds[t]="284151cb-584d-4ac3-bbab-f6f18808b701",e._sentryDebugIdIdentifier="sentry-dbid-284151cb-584d-4ac3-bbab-f6f18808b701")}catch(e){}}(),function(){var e="undefined"!=typeof window?window:"undefined"!=typeof global?global:"undefined"!=typeof globalThis?globalThis:"undefined"!=typeof self?self:{};e._sentryModuleMetadata=e._sentryModuleMetadata||{},function(){var t,o=(new e.Error).stack,n=e._sentryModuleMetadata[o]||{},i={"_sentryBundlerPluginAppKey:tidio-sentry-widget-app-key":!0},d={};for(t in n)n.hasOwnProperty(t)&&(d[t]=n[t]);for(t in i)i.hasOwnProperty(t)&&(d[t]=i[t]);e._sentryModuleMetadata[o]=d}()}();var _global="undefined"!=typeof window?window:"undefined"!=typeof global?global:"undefined"!=typeof globalThis?globalThis:"undefined"!=typeof self?self:{};_global.SENTRY_RELEASE={id:"1.462.0"},function(){var e={1912:function(e,t,o){"use strict";o.d(t,{A:function(){return n}});class n{constructor(){this.eventPrefix="tidioChat-",this.readyEventWasFired=!1,this.projectStatus=null,this.queue=[],this.popUpOpen=this.open,this.popUpHide=this.close,this.chatDisplay=this.display,this.setColorPallete=this.setColorPalette}on(e,t){"ready"===e&&this.readyEventWasFired?t():document.addEventListener(`${this.eventPrefix}${e}`,e=>{t(e.data)},!1)}trigger(e,t){if("ready"===e&&this.readyEventWasFired)return!1;try{const o=document.createEvent("Event");o.initEvent(`${this.eventPrefix}${e}`,!0,!0),o.data=t,"ready"===e&&(this.readyEventWasFired=!0),document.dispatchEvent(o),"ready"===e&&this._flushAllFromQueue()}catch{return!1}return!0}getStatus(){return this.projectStatus}method(e,t){return"ready"===e&&"function"==typeof t?(this.on("ready",t),!0):(this[e]&&this[e](t),!0)}_addToQueue(e,t=null){this.queue.push({method:e,args:t})}_flushAllFromQueue(){for(;0!==this.queue.length;){const{method:e,args:t}=this.queue.shift();this[e].apply(null,t)}}open(){this._addToQueue("open")}close(){this._addToQueue("close")}display(e=!0){this._addToQueue("display",[e])}show(){this._addToQueue("show")}hide(){this._addToQueue("hide")}setColorPalette(e){this._addToQueue("setColorPalette",[e])}track(e,t,o){void 0===e&&(e="track"),void 0===t&&(t={}),void 0===o&&(o=()=>{}),this._addToQueue("track",[e,t,o])}messageFromVisitor(e){this._addToQueue("messageFromVisitor",[e])}messageFromOperator(e){this._addToQueue("messageFromOperator",[e])}setVisitorData(e,t){this._addToQueue("setVisitorData",[e,t])}setContactProperties(e,t){this._addToQueue("setContactProperties",[e,t])}addVisitorTags(e,t){this._addToQueue("addVisitorTags",[e,t])}setFeatures(e={}){this._addToQueue("setFeatures",[e])}adjustStyles(e){this._addToQueue("adjustStyles",[e])}setVisitorCurrency(e){this._addToQueue("setVisitorCurrency",[e])}setDeviceType(e){this._addToQueue("setDeviceType",[e])}clearMessages(){this._addToQueue("clearMessages")}resetVisitor(){this._addToQueue("resetVisitor")}resetReadyEvent(){this.readyEventWasFired=!1}}}},t={};function o(n){var i=t[n];if(void 0!==i)return i.exports;var d=t[n]={exports:{}};return e[n](d,d.exports,o),d.exports}o.d=function(e,t){for(var n in t)o.o(t,n)&&!o.o(e,n)&&Object.defineProperty(e,n,{enumerable:!0,get:t[n]})},o.h=function(){return"40dcf48dfbcbd5ef901d"},o.o=function(e,t){return Object.prototype.hasOwnProperty.call(e,t)},function(){const e=Date.now();const t="boolean"==typeof PRODUCTION_DEVELOPMENT_BUILD&&!0===PRODUCTION_DEVELOPMENT_BUILD,n=t?"https://code.tidio.co/widget-v4//dist/":"https://code.tidio.co/widget-v4/";function i(e,t){try{const o=e.createElement("link");o.rel="preload",o.href=t,o.as="font",o.type="font/woff2",o.crossOrigin="",e.head.appendChild(o)}catch{}}const d=function(){var e=[],t=!1,o=!1;function n(){if(!t){t=!0;for(var o=0;o<e.length;o+=1)e[o].fn.call(window,e[o].ctx);e=[]}}function i(){"complete"===document.readyState&&n()}return function(d,a){if("function"!=typeof d)throw new TypeError("callback for docReady(fn) must be a function");return t?(setTimeout(function(){d(a)},1),!1):(e.push({fn:d,ctx:a}),"complete"===document.readyState||!document.attachEvent&&"interactive"===document.readyState?setTimeout(n,1):o||(document.addEventListener?(document.addEventListener("DOMContentLoaded",n,!1),window.addEventListener("load",n,!1)):(document.attachEvent("onreadystatechange",i),window.attachEvent("onload",n)),o=!0),!0)}}();function a(e){!function(e,t){const o=e.contentWindow.document,n=o.createElement("script");n.src=t,n.async=!0,o.body.appendChild(n)}(e,`${n.replace(/\/$/,"")}/1_462_0/static/js/widget.${o.h()}.js`)}const s=o(1912).A;window.tidioChatApi=new s,d(()=>setTimeout(()=>{var d=window.document.getElementById("tidio-chat-code"),s=/MSIE|Trident/.test(window.navigator.userAgent);if(d||s)return!1;!function(e,t,o){const n=t.createElement("iframe");let i=!1;n.onload=function(){i||(o(n),i=!0)},n.id=e,n.style.display="none",n.title="Tidio Chat code",t.body.appendChild(n),setTimeout(function(){i||(o(n),i=!0)},1e3)}("tidio-chat-code",window.document,d=>{let s=null;try{s=d.contentWindow.document}catch{d.remove(),console.warn("Tidio: this page is sandboxed, the chat widget cannot render")}var r;s&&(t&&window.__REDUX_DEVTOOLS_EXTENSION__&&(d.contentWindow.__REDUX_DEVTOOLS_EXTENSION__=window.__REDUX_DEVTOOLS_EXTENSION__,d.contentWindow.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__=window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__),function(e){let t="https://code.tidio.co/widget-v4/static/js/WidgetIframe.js";t=`${n}1_462_0/static/js/chunk-WidgetIframe-${o.h()}.js`;const i=e.createElement("link");i.rel="preload",i.as="script",i.href=t,e.head.appendChild(i)}(s),i(s,"https://code.tidio.co/widget-v4/fonts/mulish_SGhgqk3wotYKNnBQ.woff2"),i(window.document,"https://code.tidio.co/widget-v4/fonts/inter_UcCo3FwrK3iLTcviYwYZ8UA3.woff2"),r=s,["tururu.mp3","notification-sound.mp3"].forEach(e=>{const t=r.createElement("audio");t.preload="metadata",t.src=`${n}/${e}`,r.head.appendChild(t)}),function(e){const t=e.createElement("link");t.rel="preconnect",t.href="https://socket.tidio.co:443",e.head.appendChild(t)}(s),function(e){const t=e.createElement("link");t.rel="preconnect",t.href="https://cdnjs.cloudflare.com",e.head.appendChild(t)}(s),d.contentWindow.tidioChatApi=window.tidioChatApi,d.contentWindow.FIRST_POSSIBLE_JS_EXECUTION=e,"requestIdleCallback"in window?window.requestIdleCallback(function(){a(d)},{timeout:5e3}):setTimeout(function(){a(d)},0))})},0))}()}();</script>
 <script type="module" integrity="sha512-iIg7k2xntmwu6/uSb5tpc/hySgZc4eoL31yB29W6tJFo2akwjPWcEqnCEdJvGexCL0KEQwVYv5BlowfhVz26hg==" data-cf-beacon="{&quot;version&quot;:&quot;2024.11.0&quot;,&quot;token&quot;:&quot;dab7be3e6ab04952b40d6c8e93f6cc2a&quot;,&quot;spa&quot;:2}" crossorigin="anonymous">(()=>{var t={116:(t,e)=>{"use strict";Object.defineProperty(e,"__esModule",{value:!0}),e.cleanLocation=function(t){if(!t)return t;try{const e=new URL(t);return e.username="",e.password="",e.hash="",e.search="",e.toString()}catch(e){let n=t.split("?")[0].split("#")[0];if(n.includes("@")){const t=n.split("://"),e=t[1];if(e){const i=e.split("@")[1];i&&(n=t[0]+"://"+i)}}return n}},e.roundWebVitalValue=function(t,e){return"cls"===t?e:Math.ceil(e)}},173:function(t,e){!function(t){"use strict";class e{t;o=0;i=[];l(t){if(t.hadRecentInput)return;const e=this.i[0],n=this.i.at(-1);this.o&&e&&n&&t.startTime-n.startTime<1e3&&t.startTime-e.startTime<5e3?(this.o+=t.value,this.i.push(t)):(this.o=t.value,this.i=[t]),this.t?.(t)}}const n=()=>{const t=performance.getEntriesByType("navigation")[0];if(t&&t.responseStart>0&&t.responseStart<performance.now())return t},i=t=>{if("loading"===document.readyState)return"loading";const e=n();if(e){if(t<e.domInteractive)return"loading";if(0===e.domContentLoadedEventStart||t<e.domContentLoadedEventStart)return"dom-interactive";if(0===e.domComplete||t<e.domComplete)return"dom-content-loaded"}return"complete"},o=t=>{const e=t.nodeName;return 1===t.nodeType?e.toLowerCase():e.toUpperCase().replace(/^#/,"")},r=t=>{let e="";try{for(;9!==t?.nodeType;){const n=t,i=n.id?"#"+n.id:[o(n),...Array.from(n.classList??[]).sort()].join(".");if(e.length+i.length>99)return e||i;if(e=e?i+">"+e:i,n.id)break;t=n.parentNode}}catch{}return e},a=new WeakMap;function s(t,e){let n=a.get(e);return n||(n=new WeakMap,a.set(e,n)),n.get(t)||n.set(t,new e),n.get(t)}let c=-1;const l=()=>c,d=t=>{addEventListener("pageshow",e=>{e.persisted&&(c=e.timeStamp,t(e))},!0)},u=(t,e,n,i)=>{let o,r;return a=>{e.value>=0&&(a||i)&&(r=e.value-(o??0),(r||void 0===o)&&(o=e.value,e.delta=r,e.rating=((t,e)=>t>e[1]?"poor":t>e[0]?"needs-improvement":"good")(e.value,n),t(e)))}},f=t=>{requestAnimationFrame(()=>requestAnimationFrame(()=>t()))},g=()=>n()?.activationStart??0;let p=-1;const v=new Set,m=()=>"hidden"!==document.visibilityState||document.prerendering?1/0:0,y=t=>{if("hidden"===document.visibilityState){if("visibilitychange"===t.type)for(const t of v)t();isFinite(p)||(p="visibilitychange"===t.type?t.timeStamp:0,removeEventListener("prerenderingchange",y,!0))}},h=(t=!1)=>{if(t&&(p=1/0),p<0){const t=g(),e=document.prerendering?void 0:globalThis.performance.getEntriesByType("visibility-state").find(e=>"hidden"===e.name&&e.startTime>=t)?.startTime;p=e??m(),addEventListener("visibilitychange",y,!0),addEventListener("prerenderingchange",y,!0),d(()=>{setTimeout(()=>{p=m()})})}return{get firstHiddenTime(){return p},onHidden(t){v.add(t)}}},T=(t,e=-1,i,o=0,r,a,s)=>{const c=n(),d=c?.navigationId||0;let u="navigate";return i?u=i:l()>=0?u="back-forward-cache":c&&(document.prerendering||g()>0?u="prerender":document.wasDiscarded?u="restore":c.type&&(u=c.type.replace(/_/g,"-"))),{name:t,value:e,rating:"good",delta:0,entries:[],id:`v6-${Date.now()}-${Math.floor(8999999999999*Math.random())+1e12}`,navigationType:u,navigationId:o||d,navigationInteractionId:r,navigationURL:a||c?.name,navigationStartTime:s||0}},S=(t,e,n={})=>{try{const i=t.filter(t=>PerformanceObserver.supportedEntryTypes.includes(t));if(i.length>0){const t=new PerformanceObserver(t=>{queueMicrotask(()=>{const n=t.getEntries();i.length>1&&n.sort((t,e)=>t.startTime+t.duration-(e.startTime+e.duration)),e(n)})});for(const e of i)t.observe({type:e,buffered:!0,...n});return t}}catch{}},b=t=>globalThis.PerformanceObserver?.supportedEntryTypes?.includes("soft-navigation")&&"function"==typeof globalThis.PerformanceSoftNavigation?.prototype?.getLargestInteractionContentfulPaint&&t&&t.reportSoftNavs,w=(t,e)=>{if(t.set(e.navigationId,e),t.size>2){const e=t.keys().next().value;void 0!==e&&t.delete(e)}},E=t=>{let e=!1;return()=>{e||(t(),e=!0)}};class I{u}const P=t=>{document.prerendering?addEventListener("prerenderingchange",t,!0):t()},x=[1800,3e3],L=(t,e={})=>{const n=b(e);P(()=>{const i=s(e,I),o=h();let r,a=T("FCP");const c=S(["paint"],t=>{for(const e of t)"first-contentful-paint"===e.name&&(c.disconnect(),e.startTime<o.firstHiddenTime&&(a.value=Math.max(e.startTime-g(),0),a.entries.push(e),a.navigationId=e.navigationId||a.navigationId,r(!0)))});c&&(r=u(t,a,x,e.reportAllChanges),d(n=>{a=T("FCP",-1,"back-forward-cache",a.navigationId,a.navigationInteractionId,a.navigationURL,l()),r=u(t,a,x,e.reportAllChanges),f(()=>{a.value=performance.now()-n.timeStamp,r(!0)})})),n&&S(["soft-navigation"],n=>{n.forEach(n=>{i.u&&n.navigationId&&w(i.u,n);const o=Math.max((n.presentationTime||n.paintTime||0)-n.startTime,0);a=T("FCP",o,"soft-navigation",n.navigationId,n.interactionId,n.name,n.startTime),r=u(t,a,x,e.reportAllChanges),r(!0)})},e)})},C=[.1,.25],M=t=>t.find(t=>1===t.node?.nodeType)||t[0];let A=0,O=1/0,k=0;const N=t=>{for(const e of t)e.interactionId&&(O=Math.min(O,e.interactionId),k=Math.max(k,e.interactionId),A=k?(k-O)/7+1:0)};let D;const R=()=>D?A:performance.interactionCount??0;class B{h=0;p=[];v=new Map;m;T;M(){return R()-this.h}D(){this.h=R(),this.p.length=0,this.v.clear()}S(t){const e=this.M(),n=Math.min(this.p.length-1,Math.floor(e/50));return!e||-1!==n||"soft-navigation"!==t&&"back-forward-cache"!==t?this.p[n]:{k:8,id:-1,entries:[]}}l(t){if(this.m?.(t),!t.interactionId)return;const e=this.p.at(-1);let n=this.v.get(t.interactionId);if(n||this.p.length<10||t.duration>e.k){if(n?t.duration>n.k?(n.entries=[t],n.k=t.duration):t.duration===n.k&&t.startTime===n.entries[0].startTime&&n.entries.push(t):(n={id:t.interactionId,entries:[t],k:t.duration},this.v.set(n.id,n),this.p.push(n)),this.p.sort((t,e)=>e.k-t.k),this.p.length>10){const t=this.p.splice(10);for(const e of t)this.v.delete(e.id)}this.T?.(n)}}}const F=t=>{const e="requestIdleCallback"in globalThis?1e3:0,n=globalThis.requestIdleCallback||setTimeout,i=globalThis.cancelIdleCallback||clearTimeout;if("hidden"===document.visibilityState)t();else{const o=E(t);let r=-1;const a=()=>{i(r),o()};addEventListener("visibilitychange",a,{once:!0,capture:!0}),r=n(()=>{removeEventListener("visibilitychange",a,{capture:!0}),o()},{timeout:e})}},j=[200,500];class _{m;u;l(t){this.m?.(t)}}const H=[2500,4e3];let V=50;const U=[];S(["resource"],t=>{for(const e of t)U.push(e),U.length>V&&U.shift()});const W=[800,1800],q=t=>{document.prerendering?P(()=>q(t)):"complete"!==document.readyState?addEventListener("load",()=>q(t),!0):setTimeout(t)};t.CLSThresholds=C,t.FCPThresholds=x,t.INPThresholds=j,t.LCPThresholds=H,t.TTFBThresholds=W,t.onCLS=(t,n={})=>{const o=s(n=Object.assign({},n),e),a=new WeakMap;o.t=t=>{if(t?.sources?.length){const e=M(t.sources),i=e?.node;if(i){const t=n.generateTarget?.(i)??r(i);a.set(e,t)}}},((t,n={})=>{const i=h();L(E(()=>{let o,r=T("CLS",0);const a=s(n,e),c=(e,i,s,c,l)=>{r=T("CLS",0,e,i,s,c,l),a.o=0,o=u(t,r,C,n.reportAllChanges)},g=(t=!1)=>{a.o>r.value&&(r.value=a.o,r.entries=a.i),o(t)},p=t=>{g(!0),c("soft-navigation",t.navigationId,t.interactionId,t.name,t.startTime)},v=t=>{for(const e of t)"soft-navigation"!==e.entryType?a.l(e):p(e);g()},m=["layout-shift"];b(n)&&m.push("soft-navigation");const y=S(m,v);y&&(o=u(t,r,C,n.reportAllChanges),i.onHidden(()=>{v(y.takeRecords()),o(!0)}),d(()=>{c("back-forward-cache",r.navigationId,r.navigationInteractionId,r.navigationURL,l()),f(o)}),setTimeout(o))}))})(e=>{t((t=>{let e={};if(t.entries.length){const n=t.entries.reduce((t,e)=>t.value>e.value?t:e);if(n?.sources?.length){const t=M(n.sources);t&&(e={largestShiftTarget:a.get(t),largestShiftTime:n.startTime,largestShiftValue:n.value,largestShiftSource:t,largestShiftEntry:n,loadState:i(n.startTime)})}}return Object.assign(t,{attribution:e})})(e))},n)},t.onFCP=(t,e={})=>{const o=s(e=Object.assign({},e),I);b(e)&&(o.u=new Map),L(e=>{t((t=>{let e={timeToFirstByte:0,firstByteToFCP:t.value,loadState:i(l())};if("soft-navigation"!==t.navigationType){if(t.entries.length){const o=n(),r=t.entries.at(-1);if(o){const n=o.responseStart,a=o.activationStart||0,s=Math.max(0,n-a);e={timeToFirstByte:s,firstByteToFCP:t.value-s,loadState:i(t.entries[0].startTime),navigationEntry:o,fcpEntry:r}}}}else{const n=o.u?.get(t.navigationId);n&&(e={timeToFirstByte:0,firstByteToFCP:t.value,loadState:"complete",navigationEntry:n})}return Object.assign(t,{attribution:e})})(e))},e)},t.onINP=(t,e={})=>{const n=s(e=Object.assign({},e),B);let o=[],a=[],c=0;const f=new WeakMap,g=new WeakMap;let p=!1;const v=()=>{p||(F(m),p=!0)},m=()=>{const t=new Set(n.p.map(t=>f.get(t.entries[0]))),e=a.length-10;a=a.filter((n,i)=>i>=e||t.has(n));const i=new Set;for(const t of a){const e=y(t.startTime,t.processingEnd);for(const t of e)i.add(t)}o=o.filter(t=>t.startTime>c||i.has(t)),p=!1};n.m=t=>{const n=t.startTime+t.duration;let i;c=Math.max(c,t.processingEnd);for(let o=a.length-1;o>=0;o--){const r=a[o];if(Math.abs(n-r.renderTime)<=8){i=r,i.startTime=Math.min(t.startTime,i.startTime),i.processingStart=Math.min(t.processingStart,i.processingStart),i.processingEnd=Math.max(t.processingEnd,i.processingEnd),e.includeProcessedEventEntries&&i.entries.push(t);break}}i||(i={startTime:t.startTime,processingStart:t.processingStart,processingEnd:t.processingEnd,renderTime:n,entries:e.includeProcessedEventEntries?[t]:[]},a.push(i)),t.interactionId&&f.set(t,i),v()},n.T=t=>{if(!g.get(t)){const n=t.entries.find(t=>t.target)?.target;if(n){const i=e.generateTarget?.(n)??r(n);g.set(t,i)}else{const e=t.entries.find(t=>t.targetSelector)?.targetSelector;e&&g.set(t,e)}}};const y=(t,e)=>{const n=[];for(const i of o)if(!(i.startTime+i.duration<t)){if(i.startTime>e)break;n.push(i)}return n};S(["long-animation-frame"],t=>{o=o.concat(t),v()},e),((t,e={})=>{if(!globalThis.PerformanceEventTiming||!("interactionId"in PerformanceEventTiming.prototype))return;const n=h();P(()=>{"interactionCount"in performance||D||(D=S(["event"],N,{durationThreshold:0}));let i,o=T("INP");const r=s(e,B),a=(n,a,s,c,l)=>{r.D(),o=T("INP",-1,n,a,s,c,l),i=u(t,o,j,e.reportAllChanges)},c=()=>{const t=r.S(o.navigationType);t&&t.k!==o.value&&(o.value=t.k,o.entries=t.entries,i())},f=t=>{c(),i(!0),a("soft-navigation",t.navigationId,t.interactionId,t.name,t.startTime)},g=(t,e=!1)=>{F(()=>{for(const e of t)"soft-navigation"!==e.entryType?r.l(e):f(e);c(),e&&i(!0)})},p=["event","first-input"];b(e)&&p.push("soft-navigation");const v=S(p,g,{...e,durationThreshold:e.durationThreshold??40});i=u(t,o,j,e.reportAllChanges),v&&(n.onHidden(()=>{g(v.takeRecords(),!0)}),d(()=>{a("back-forward-cache",o.navigationId,o.navigationInteractionId,o.navigationURL,l())}))})})(e=>{t((t=>{if(0===t.entries.length){const e=t.navigationStartTime||0,n={processedEventEntries:[],longAnimationFrameEntries:[],inputDelay:0,processingDuration:0,presentationDelay:t.value,loadState:i(e)};return Object.assign(t,{attribution:n})}const e=t.entries[0],o=f.get(e),r=Math.max(o.processingStart,e.startTime),a=Math.max(e.startTime+e.duration,r),s=Math.min(o.processingEnd,a),c=o.entries.sort((t,e)=>t.processingStart-e.processingStart),l=y(e.startTime,s),d=n.v.get(e.interactionId),u={interactionTarget:g.get(d),interactionType:e.name.startsWith("key")?"keyboard":"pointer",interactionTime:e.startTime,nextPaintTime:a,processedEventEntries:c,longAnimationFrameEntries:l,inputDelay:r-e.startTime,processingDuration:s-r,presentationDelay:a-s,loadState:i(e.startTime),longestScript:void 0,totalScriptDuration:void 0,totalStyleAndLayoutDuration:void 0,totalPaintDuration:void 0,totalUnattributedDuration:void 0};return(t=>{const e=t.interactionTime,n=t.nextPaintTime;if(!t.longAnimationFrameEntries?.length||!e||!n)return;const i=t.inputDelay,o=t.processingDuration;let r,a,s=0,c=0,l=0,d=0;for(const n of t.longAnimationFrameEntries){c=c+n.startTime+n.duration-n.styleAndLayoutStart;for(const t of n.scripts){const n=t.startTime+t.duration;if(n<e)continue;const l=n-Math.max(e,t.startTime),u=t.duration?l/t.duration*t.forcedStyleAndLayoutDuration:0;s+=l-u,c+=u,l>d&&(a=t.startTime<e+i?"input-delay":t.startTime>=e+i+o?"presentation-delay":"processing-duration",r=t,d=l)}}const u=t.longAnimationFrameEntries.at(-1),f=u?u.startTime+u.duration:0;f>=e+i+o&&(l=n-f),r&&a&&(t.longestScript={entry:r,subpart:a,intersectingDuration:d}),t.totalScriptDuration=s,t.totalStyleAndLayoutDuration=c,t.totalPaintDuration=l,t.totalUnattributedDuration=n-e-s-c-l})(u),Object.assign(t,{attribution:u})})(e))},e)},t.onLCP=(t,e={})=>{null!=(e=Object.assign({},e)).resourceBufferSize&&(V=e.resourceBufferSize);const i=s(e,_),o=new WeakMap;b(e)&&(i.u=new Map),i.m=t=>{const n=t.element;if(n){const i=e.generateTarget?.(n)??r(n);o.set(t,i)}else t.id&&o.set(t,`#${t.id}`)},((t,e={})=>{let n=!1;const i=b(e);P(()=>{let o,r=h(),a=T("LCP");const c=s(e,_),p=(i,s,c,l,d)=>{a=T("LCP",-1,i,s,c,l,d),o=u(t,a,H,e.reportAllChanges),n=!1,"soft-navigation"===i&&(r=h(!0))},v=t=>{c.u&&t.navigationId&&w(c.u,t),n||o(!0),p("soft-navigation",t.navigationId,t.interactionId,t.name,t.startTime);const e=t.getLargestInteractionContentfulPaint?.();e&&m([e])},m=t=>{e.reportAllChanges||i||(t=t.slice(-1));for(const e of t){if(!e)continue;if("soft-navigation"===e.entryType){v(e);continue}let t=0,n=[],i=e.startTime;if("largest-contentful-paint"===e.entryType)t=Math.max(e.startTime-g(),0),c.l(e),n=[e];else if("interaction-contentful-paint"===e.entryType){const o=e;if(!a.navigationId)continue;if("interactionId"in o&&o.interactionId!=a.navigationInteractionId)continue;i=o.largestContentfulPaint?.renderTime||0,t=Math.max(i-e.startTime,0),o.largestContentfulPaint&&(c.l(o.largestContentfulPaint),n=[o.largestContentfulPaint])}i<r.firstHiddenTime&&(a.value=t,a.entries=n,o())}},y=["largest-contentful-paint"];i&&y.push("interaction-contentful-paint","soft-navigation");const b=S(y,m);if(b){o=u(t,a,H,e.reportAllChanges);const r=["keydown","click","visibilitychange"],s=t=>{if(t.isTrusted&&!n){const t=a.id;F(()=>{if(!n){if(!i){b.disconnect();for(const t of r)removeEventListener(t,s,{capture:!0})}t===a.id&&(n=!0,o(!0))}})}};for(const t of r)addEventListener(t,s,{capture:!0});d(i=>{p("back-forward-cache",a.navigationId,a.navigationInteractionId,a.navigationURL,l()),o=u(t,a,H,e.reportAllChanges),f(()=>{a.value=performance.now()-i.timeStamp,n=!0,o(!0)})})}})})(e=>{t((t=>{let e={timeToFirstByte:0,resourceLoadDelay:0,resourceLoadDuration:0,elementRenderDelay:t.value};if(t.entries.length){const r=t.entries.at(-1),a=r.url&&(U.findLast(t=>t.name===r.url)||performance.getEntriesByType("resource").findLast(t=>t.name===r.url));let s;e.target=o.get(r),e.lcpEntry=r,r.url&&(e.url=r.url),a&&(e.lcpResourceEntry=a);let c=0,l=0;if("soft-navigation"!==t.navigationType?(s=n(),c=s?.activationStart??0,l=s?.responseStart??0):(c=t.navigationStartTime||0,s=i.u?.get(t.navigationId)),s){const n=Math.max(0,l-c),i=Math.max(n,a?(a.requestStart||a.startTime)-c:0),o=Math.min(t.value,Math.max(i,a?a.responseEnd-c:0));e={...e,timeToFirstByte:n,resourceLoadDelay:i-n,resourceLoadDuration:o-i,elementRenderDelay:t.value-o,navigationEntry:s}}}return Object.assign(t,{attribution:e})})(e))},e)},t.onTTFB=(t,e={})=>{((t,e={})=>{const i=b(e);let o=T("TTFB"),r=u(t,o,W,e.reportAllChanges);q(()=>{const a=n();if(a){const n=a.responseStart;o.value=Math.max(n-g(),0),o.entries=[a],r(!0),d(()=>{o=T("TTFB",0,"back-forward-cache",o.navigationId,o.navigationInteractionId,o.navigationURL,l()),r=u(t,o,W,e.reportAllChanges),r(!0)}),i&&S(["soft-navigation"],n=>{n.forEach(n=>{n.navigationId&&(o=T("TTFB",0,"soft-navigation",n.navigationId,n.interactionId,n.name,n.startTime),o.entries=[n],r=u(t,o,W,e.reportAllChanges),r(!0))})},e)}})})(e=>{t((t=>{const e=t.entries[0];let n={waitingDuration:0,cacheDuration:0,dnsDuration:0,connectionDuration:0,requestDuration:0,navigationEntry:e};if(t.entries.length&&e instanceof PerformanceNavigationTiming){const i=e.activationStart||0,o=Math.max((e.workerStart||e.fetchStart||0)-i,0),r=Math.max(e.domainLookupStart-i,0),a=Math.max(e.connectStart-i,0),s=Math.max(e.connectEnd-i,0);n={waitingDuration:o,cacheDuration:r-o,dnsDuration:a-r,connectionDuration:s-a,requestDuration:t.value-s,navigationEntry:e}}return Object.assign(t,{attribution:n})})(e))},e)}}(e)},323:(t,e,n)=>{"use strict";Object.defineProperty(e,"__esModule",{value:!0}),e.sendObjectBeacon=function(t,e,n,o=!1,r=null){let a=r||`/cdn-cgi/rum?${t}`,s=!0;if(navigator&&"string"==typeof navigator.userAgent)try{const t=navigator.userAgent.match(/Chrome\/([0-9]+)/);t&&t[0].toLowerCase().indexOf("chrome")>-1&&parseInt(t[1])<81&&(s=!1)}catch(t){}if(navigator&&"function"==typeof navigator.sendBeacon&&s&&o){e.st=i.SendType.SendBeacon;const t=JSON.stringify(e),n={type:"application/json"},o=navigator.sendBeacon&&navigator.sendBeacon.bind(navigator);null==o||o(a,new Blob([t],n))}else{e.st=i.SendType.XHR;const t=JSON.stringify(e),o=new XMLHttpRequest;n&&(o.onreadystatechange=function(){4==this.readyState&&204==this.status&&n()}),o.open("POST",a,!0),o.setRequestHeader("content-type","application/json"),o.send(t)}};const i=n(696)},458:(t,e)=>{"use strict";Object.defineProperty(e,"__esModule",{value:!0}),e.uuidv4=function(){return crypto.randomUUID?crypto.randomUUID():"xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx".replace(/[xy]/g,function(t){const e=16*Math.random()|0;return("x"===t?e:3&e|8).toString(16)})}},674:(t,e)=>{"use strict";Object.defineProperty(e,"__esModule",{value:!0}),e.positiveOnlyFields=e.timingsV2TargetKeys=e.timingsTargetKeys=void 0,e.buildTimingsObject=function(t,n,i,o){if(void 0!==n)for(const r of i){const i=t[r];if("number"==typeof i){if(e.positiveOnlyFields.has(r)&&i<=o)continue;n[r]=Math.ceil(i)}else"string"==typeof i&&(n[r]=i)}},e.timingsTargetKeys=["navigationStart","domainLookupStart","domainLookupEnd","connectStart","connectEnd","secureConnectionStart","redirectStart","redirectEnd","requestStart","responseStart","responseEnd","domLoading","domComplete","loadEventStart","loadEventEnd"],e.timingsV2TargetKeys=["nextHopProtocol","domainLookupStart","domainLookupEnd","connectStart","connectEnd","secureConnectionStart","redirectStart","redirectEnd","requestStart","responseStart","responseEnd","domInteractive","domComplete","loadEventStart","loadEventEnd","finalResponseHeadersStart","firstInterimResponseStart","transferSize","decodedBodySize"],e.positiveOnlyFields=new Set(["secureConnectionStart","redirectStart","redirectEnd"])},696:(t,e)=>{"use strict";var n,i,o,r,a;Object.defineProperty(e,"__esModule",{value:!0}),e.NavigationType=e.SpaMonitoringType=e.FetchPriority=e.EventType=e.SendType=void 0,function(t){t[t.SendBeacon=1]="SendBeacon",t[t.XHR=2]="XHR"}(n||(e.SendType=n={})),function(t){t[t.Load=1]="Load",t[t.Additional=2]="Additional",t[t.WebVitalsV2=3]="WebVitalsV2"}(i||(e.EventType=i={})),function(t){t.High="high",t.Low="low",t.Auto="auto"}(o||(e.FetchPriority=o={})),function(t){t[t.None=0]="None",t[t.HistoryAndNavigationAPI=1]="HistoryAndNavigationAPI",t[t.SoftNavigationHeuristics=2]="SoftNavigationHeuristics"}(r||(e.SpaMonitoringType=r={})),function(t){t.Navigate="navigate",t.Reload="reload",t.BackForward="back-forward",t.BackForwardCache="back-forward-cache",t.Prerender="prerender",t.Restore="restore",t.SoftNavigation="soft-navigation",t.RoutingApis="routing-apis"}(a||(e.NavigationType=a={}))},969:()=>{"use strict";"function"!=typeof Array.prototype.findLast&&Object.defineProperty(Array.prototype,"findLast",{value:function(t,e){for(let n=this.length-1;n>=0;n--)if(t.call(e,this[n],n,this))return this[n]},writable:!0,configurable:!0,enumerable:!1}),"function"!=typeof Array.prototype.at&&Object.defineProperty(Array.prototype,"at",{value:function(t){const e=Math.trunc(t)||0,n=e>=0?e:this.length+e;if(!(n<0||n>=this.length))return this[n]},writable:!0,configurable:!0,enumerable:!1})}},e={};function n(i){var o=e[i];if(void 0!==o)return o.exports;var r=e[i]={exports:{}};return t[i].call(r.exports,r,r.exports,n),r.exports}(()=>{"use strict";n(969);const t=n(696),e=n(323),i=n(173),o=n(458),r=n(674),a=n(116);(()=>{function n(t){let e="";if(e=window.location.origin?window.location.origin:`${window.location.protocol}//${window.location.host}`,t&&"string"==typeof t)if(0===t.indexOf("/"))e+=t;else try{return new URL(t).href}catch(t){}else{const t=window.location.pathname;t&&t.length>0&&(e+=t),window.location.search&&(e+=window.location.search)}return e}!function(){const s=window.performance||window.webkitPerformance||window.msPerformance||window.mozPerformance,c="data-cf-beacon",l=document.currentScript||("function"==typeof document.querySelector?document.querySelector(`script[${c}]`):void 0),d=["lcp","cls","fcp","ttfb","inp"];let u=(0,o.uuidv4)(),f=[],g=0;const p=(t,e={})=>{var n;const i=null!==(n=e.when)&&void 0!==n?n:Math.ceil(s.now());!e.referrer&&f[f.length-1]&&(e.referrer=f[f.length-1].url),f.push({id:u,url:t,ts:i,referrer:""!==e.referrer?e.referrer:void 0,navigationType:e.navigationType}),f.length>3&&f.shift()};p(document.location.href,{when:0,referrer:document.referrer,navigationType:t.NavigationType.Navigate});let v=window.__cfBeacon?window.__cfBeacon:{};if(v&&"single"===v.load)return;if(l){const t=l.getAttribute(c);if(t)try{v=Object.assign(Object.assign({},v),JSON.parse(t))}catch(t){}else{const t=l.getAttribute("src");if(t&&"function"==typeof URLSearchParams){const e=new URLSearchParams(t.replace(/^[^\?]+\??/,"")),n=e.get("token");n&&(v.token=n),v.spa=e.get("spa")}}v&&"multi"!==v.load&&(v.load="single"),window.__cfBeacon=v}if(!s||!v||!v.token)return;let m=n();const y=function(e){let n=e;return null==n||"true"===n||!0===n?t.SpaMonitoringType.HistoryAndNavigationAPI:"false"===n||!1===n?t.SpaMonitoringType.None:("string"==typeof n&&(n=parseInt(n,10)),"number"==typeof n&&n>=t.SpaMonitoringType.None&&n<=t.SpaMonitoringType.SoftNavigationHeuristics?n:t.SpaMonitoringType.HistoryAndNavigationAPI)}(v.spa),h=y!==t.SpaMonitoringType.None;let T=null,S=null;const b=v.send&&v.send.to?v.send.to:void 0===v.version?"https://cloudflareinsights.com/cdn-cgi/rum":null,w=/Chrome\/(\d+)/,E=/Chromium\/(\d+)/,I=/Firefox\/(\d+)/,P=/Version\/(\d+(?:\.\d+)?)/,x=/rv:(\d+(?:\.\d+)*)/,L=/AppleWebKit\/(\d+(?:\.\d+)*)/,C=function(){const t={};if("undefined"==typeof navigator||"string"!=typeof navigator.userAgent)return t;const e=navigator.userAgent;if(-1!==e.indexOf("Chrome/")||-1!==e.indexOf("Chromium/")){t.be="Blink";const n=w.exec(e)||E.exec(e);n&&(t.bev=n[1],t.bv=n[1])}else if(-1!==e.indexOf("Firefox/")||-1!==e.indexOf("Gecko/")){t.be="Gecko";const n=x.exec(e);n&&(t.bev=n[1]);const i=I.exec(e);i&&(t.bv=i[1])}else if(-1!==e.indexOf("Safari/")&&-1!==e.indexOf("AppleWebKit/")){t.be="WebKit";const n=L.exec(e);n&&(t.bev=n[1]);const i=P.exec(e);i&&(t.bv=i[1])}return t}();!function(t){try{"undefined"!=typeof navigator&&navigator.userAgentData&&"function"==typeof navigator.userAgentData.getHighEntropyValues&&navigator.userAgentData.getHighEntropyValues(["platformVersion"]).then(function(e){var n;e.platformVersion&&(t.ov=function(t,e){const n=e.split("."),i=parseInt(n[0],10);return"Windows"===t?i>=13?"11":i>=1?"10":n[0]:("iOS"===t||"macOS"===t)&&n.length>=2?n[0]+"."+n[1]:n[0]}((null===(n=navigator.userAgentData)||void 0===n?void 0:n.platform)||"",e.platformVersion))}).catch(function(){})}catch(t){}}(C);let M,A=!1,O=!1;const k={};function N(t){var e,n,i,o,r,a;const s=window.location.pathname;if(!O){const e="string"==typeof(c=t.navigationType)&&q.has(c)?t.navigationType:void 0;e&&function(t,e){const n=V(t);n&&(n.navigationType=e)}(u,e),O=!0}var c;let l;switch("INP"!==t.name&&(k[t.name.toLowerCase()]={value:t.value,path:s}),t.name){case"CLS":l=t.attribution,l&&k.cls&&(k.cls.element=l.largestShiftTarget,k.cls.currentRect=null===(e=l.largestShiftSource)||void 0===e?void 0:e.currentRect,k.cls.previousRect=null===(n=l.largestShiftSource)||void 0===n?void 0:n.previousRect);break;case"LCP":l=t.attribution,l&&k.lcp&&(k.lcp.element=l.target,k.lcp.size=null===(i=l.lcpEntry)||void 0===i?void 0:i.size,k.lcp.url=l.url,k.lcp.rld=Math.ceil(l.resourceLoadDelay),k.lcp.rlt=Math.ceil(l.resourceLoadDuration),k.lcp.erd=Math.ceil(l.elementRenderDelay),k.lcp.it=null===(o=l.lcpResourceEntry)||void 0===o?void 0:o.initiatorType,k.lcp.fp=null===(a=null===(r=l.lcpEntry)||void 0===r?void 0:r.element)||void 0===a?void 0:a.getAttribute("fetchpriority"));break;case"INP":(null==k.inp||Number(k.inp.value)<Number(t.value))&&(k.inp={value:Number(t.value),path:s},l=t.attribution,l&&k.inp&&(k.inp.element=l.interactionTarget,k.inp.name=l.interactionType,k.inp.idy=Math.ceil(l.inputDelay),k.inp.pdn=Math.ceil(l.processingDuration),k.inp.pdy=Math.ceil(l.presentationDelay)))}}"PerformanceObserver"in window&&"function"==typeof PerformanceObserver&&PerformanceObserver.supportedEntryTypes&&((0,i.onLCP)(N,{reportAllChanges:!0,reportSoftNavs:!0}),(0,i.onFCP)(N),(0,i.onINP)(N,{reportSoftNavs:!0}),(0,i.onTTFB)(N),PerformanceObserver.supportedEntryTypes&&-1!==PerformanceObserver.supportedEntryTypes.indexOf("layout-shift")&&(0,i.onCLS)(N,{reportAllChanges:!0,reportSoftNavs:!0})),document.addEventListener("visibilitychange",()=>{if("hidden"===document.visibilityState){if(h&&F()){const t=n();(null==M?void 0:M.url)==t&&(null==M?void 0:M.triggered)||D(),p(t)}!A&&M&&(A=!0,R())}});const D=i=>{g++;let o=function(e){const i=K(u)===t.NavigationType.RoutingApis||K(u)===t.NavigationType.SoftNavigation,o=!i,a=s.timing,c=e||n(),l=Object.assign(Object.assign({},z(t.EventType.Load,c)),{memory:{},timings:{},firstPaint:0,firstContentfulPaint:0,versions:{fl:v?v.version:"",js:"2026.9.1",timings:1}});if(o){if("function"==typeof s.getEntriesByType){const t=s.getEntriesByType("navigation");if(t&&Array.isArray(t)&&t.length>0){l.timingsV2={},l.versions.timings=2,delete l.timings,t[0].deliveryType&&(l.dt=t[0].deliveryType);const e=t[0];(0,r.buildTimingsObject)(e,l.timingsV2,r.timingsV2TargetKeys,e.startTime)}}if(1===l.versions.timings){const t=a;l.timings&&(0,r.buildTimingsObject)(t,l.timings,r.timingsTargetKeys,t.navigationStart)}s.memory?function(t,e){for(const n in t){const i=t[n];void 0!==e&&("number"!=typeof i&&"string"!=typeof i||(e[n]=i))}}(s.memory,l.memory):delete l.memory,l.firstPaint=J("first-paint"),l.firstContentfulPaint=J("first-contentful-paint")}return v&&(v.icTag&&(l.icTag=v.icTag),l.siteToken=v.token),i&&(delete l.timings,delete l.timingsV2,delete l.memory,delete l.firstPaint,delete l.firstContentfulPaint,delete l.serverTimings),l}(i);o&&v&&v&&((0,e.sendObjectBeacon)("",o,()=>{},!1,b),void 0!==v.forward&&void 0!==v.forward.url&&(0,e.sendObjectBeacon)("",o,()=>{},!1,v.forward.url))},R=n=>{let i=function(e){const n=Object.assign({},z(t.EventType.WebVitalsV2,e));return v&&(v.version&&(n.versions.fl=v.version),v.icTag&&(n.icTag=v.icTag),n.siteToken=v.token),k&&d.forEach(t=>{k[t]&&void 0!==k[t].value&&(n[t]=k[t],n[t]&&n[t].value&&(n[t].value=(0,a.roundWebVitalValue)(t,n[t].value)))}),n}(n);d.forEach(t=>{delete k[t]}),v&&(0,e.sendObjectBeacon)("",i,()=>{},!0,b)},B=()=>{const t=window.__cfRl&&window.__cfRl.done||window.__cfQR&&window.__cfQR.done;t?t.then(D):D(),M={id:u,url:n(),ts:(new Date).getTime(),triggered:!0}};"complete"===window.document.readyState?B():window.addEventListener("load",()=>{window.setTimeout(B)});const F=()=>h&&0===f.filter(t=>t.id===u).length;function j(){u=(0,o.uuidv4)()}var _,H;function V(t){for(let e=f.length-1;e>=0;e--)if(f[e].id===t)return f[e]}function U(t){var e;if(t){let n=null===(e=V(t))||void 0===e?void 0:e.ts;if(n)return Math.ceil(s.timeOrigin+n)}return Math.ceil(s.timeOrigin)}function W(t){var e;return null===(e=V(t))||void 0===e?void 0:e.referrer}h&&(y===t.SpaMonitoringType.SoftNavigationHeuristics&&(T=function(){var e,n;if(!("PerformanceObserver"in window)||!PerformanceObserver.supportedEntryTypes||-1===PerformanceObserver.supportedEntryTypes.indexOf("soft-navigation"))return null;if("function"!=typeof(null===(n=null===(e=window.PerformanceSoftNavigation)||void 0===e?void 0:e.prototype)||void 0===n?void 0:n.getLargestInteractionContentfulPaint))return null;const i=new PerformanceObserver(e=>{for(const n of e.getEntries())R(m),j(),m=n.name,p(n.name,{navigationType:t.NavigationType.SoftNavigation,when:n.startTime}),D(n.name)});if(!i||"function"!=typeof i.observe)return null;try{i.observe({type:"soft-navigation",buffered:!0})}catch(t){return null}return i}()),T||y!==t.SpaMonitoringType.HistoryAndNavigationAPI&&y!==t.SpaMonitoringType.SoftNavigationHeuristics||(S=function(){if(!("navigation"in window)||!window.navigation)return null;let e=function(e){var n,i;e.canIntercept&&(R(m),!e.destination||"boolean"!=typeof e.destination.sameDocument||e.destination.sameDocument?(j(),m=null!==(i=null===(n=null==e?void 0:e.destination)||void 0===n?void 0:n.url)&&void 0!==i?i:m,p(m,{navigationType:t.NavigationType.RoutingApis}),D(m)):A=!0)};return window.navigation.addEventListener("navigate",e),e}(),S||(_=window.history,(H=_.pushState)&&(_.pushState=function(e,i,o){const r=n(o);return m!=r&&(R(m),j(),p(r,{navigationType:t.NavigationType.RoutingApis}),D(r),m=r),H.apply(_,[e,i,o])},window.addEventListener("popstate",function(e){m!=n()&&(R(m),j(),m=n(),p(m,{navigationType:t.NavigationType.RoutingApis}),D(m))})))));const q=new Set(Object.keys(t.NavigationType).map(e=>t.NavigationType[e]));function K(t){var e;return null===(e=V(t))||void 0===e?void 0:e.navigationType}function $(){if(!v||!v.serverTiming)return;let t=[];for(const e of["navigation","resource"])for(const n of s.getEntriesByType(e)){const{name:i,serverTiming:o}=n;if(o){if("resource"===e){const t=v.serverTiming.location_startswith;if(!t||!Array.isArray(t))continue;let e=!1;for(const n of t)if(i.startsWith(n)){e=!0;break}if(!e)continue}for(const{name:n,description:r,duration:a}of o)if(v.serverTiming.name&&v.serverTiming.name[n])try{const o=new URL(i);t.push({location:"resource"===e?`${o.origin}${o.pathname}`:void 0,name:n,dur:a,desc:r})}catch(t){}}}return t}function z(e,i){const o=K(u),r=o===t.NavigationType.RoutingApis||o===t.NavigationType.SoftNavigation,s={startTime:U(u),pageloadId:u,n:g>1?g:void 0,eventType:e,nt:o,location:(0,a.cleanLocation)(i||n())||"",referrer:(0,a.cleanLocation)(W(u)),serverTimings:r?void 0:$(),versions:{js:"2026.9.1"},bi:(c=C,c.bv||c.ov||c.be||c.bev?C:void 0)};var c;return S&&s.nt===t.NavigationType.RoutingApis&&(s.ntapi=1),s}function J(t){var e;if("first-contentful-paint"===t&&k.fcp&&k.fcp.value)return Math.ceil(k.fcp.value);if("function"==typeof s.getEntriesByType){const n=null===(e=s.getEntriesByType("paint"))||void 0===e?void 0:e.filter(e=>e.name===t)[0];return n?Math.ceil(n.startTime):0}return 0}}()})()})()})();</script>
 
-<iframe id="tidio-chat-code" title="Tidio Chat code" style="display: none;" class="trx_addons_resize"></iframe><div class="widget_shopping_cart_live_region screen-reader-text" role="status"></div><use-chat-gpt-ai id="USE_CHAT_GPT_AI_ROOT" class="close" data-version="8.37.3" style="transition: 0.1s ease-in-out;"></use-chat-gpt-ai><use-chat-gpt-ai-content-menu id="USE_CHAT_GPT_AI_ROOT_Context_Menu"></use-chat-gpt-ai-content-menu><use-chat-gpt-ai id="maxai-global-popup-container" translate="no"></use-chat-gpt-ai><max-ai-minimum-app id="USE_CHAT_GPT_AI_ROOT_Minimize_Container" data-version="8.37.3"></max-ai-minimum-app><div id="MAXAI_SNACKBAR_CONTAINER" style="z-index: 2147483647; color: rgb(255, 255, 255); position: absolute;"><span></span></div><div id="tidio-chat" class="needsclick" style="z-index: 999999999 !important; position: fixed; width: 100%; height: 100%; bottom: 0px; right: 0px; pointer-events: none; display: block;"></div><script src="chrome-extension://gppongmhjkpfnbhagpmjfkannfbllamg/js/js.js"></script>		<div class="trx_demo_panels trx_demo_tabs_position_rc trx_demo_tabs_style_icons" style="width:320px;">  			<div class="trx_demo_tabs"> 				<a class="hint_left hint_big hint_slide" href="https://themeforest.net/checkout/98152207/create_account" target="_blank" aria-label="Buy Theme" data-type="link" style="color:#ffffff;background-color:#d3815d;"><i class="trx_demo_icon-shopping-cart"></i></a><a class="hint_left hint_big hint_slide" href="index.html" aria-label="Our Bestsellers" data-type="products" style="color:#ffffff;background-color:#d3815d;"><i class="trx_demo_icon-gallery"></i></a><a class="hint_left hint_big hint_slide" href="../index.html" aria-label="Hide Panel" data-type="link" style="color:#ffffff;background-color:#d3815d;"><i class="trx_demo_icon-browser"></i></a>			</div>  			<div class="trx_demo_panels_wrap"> 				<div id="panel_related-themes" class="trx_demo_panel 									trx_demo_panel_products									trx_demo_panel_thumbs_animation_off									trx_demo_panel_layout_1col									trx_demo_panel_style_plain" style=""><div class="trx_demo_panel_header"><h5 class="trx_demo_panel_title" style="">Our Bestsellers</h5></div><div class="trx_demo_panel_content"><div class="trx_demo_panel_list"><div class="trx_demo_panel_list_item trx_demo_featured" data-filter-value="business" data-search-value="elementra"> 											<div class="trx_demo_panel_list_item_image_wrap"> 																									<div class="trx_demo_panel_list_item_image trx_demo_panel_list_item_image_ratio_16_9" style="background-image: url(https://manoir.themerex.net/wp-content/plugins/trx_demo/images/no-thumb.gif);background-position:center;background-repeat:no-repeat;background-size:cover;" data-style="background-image: url(//themerex.net/wp-content/uploads/edd/2025/08/59-elementra.jpg);"> 															<a href="http://demo.themerex.net/" target="_blank"></a> 													</div> 													<h6 class="trx_demo_panel_list_item_title"> 													<a href="http://demo.themerex.net/" target="_blank"><span class="trx_demo_panel_list_item_price"><del>$59</del>&nbsp;$59</span>Elementra<span class="trx_demo_panel_list_item_terms"><span class="trx_demo_panel_list_item_term">Business</span></span></a> 												</h6> 																							</div> 										</div><div class="trx_demo_panel_list_item trx_demo_featured" data-filter-value="business" data-search-value="qwery"> 											<div class="trx_demo_panel_list_item_image_wrap"> 																									<div class="trx_demo_panel_list_item_image trx_demo_panel_list_item_image_ratio_16_9" style="background-image: url(https://manoir.themerex.net/wp-content/plugins/trx_demo/images/no-thumb.gif);background-position:center;background-repeat:no-repeat;background-size:cover;" data-style="background-image: url(//themerex.net/wp-content/uploads/edd/2024/03/Qwery-Preview.jpg);"> 															<a href="http://demo.themerex.net/" target="_blank"></a> 													</div> 													<h6 class="trx_demo_panel_list_item_title"> 													<a href="http://demo.themerex.net/" target="_blank"><span class="trx_demo_panel_list_item_price"><del>$59</del>&nbsp;$59</span>Qwery<span class="trx_demo_panel_list_item_terms"><span class="trx_demo_panel_list_item_term">Business</span></span></a> 												</h6> 																							</div> 										</div><div class="trx_demo_panel_list_item trx_demo_featured" data-filter-value="technology" data-search-value="ai ann"> 											<div class="trx_demo_panel_list_item_image_wrap"> 																									<div class="trx_demo_panel_list_item_image trx_demo_panel_list_item_image_ratio_16_9" style="background-image: url(https://manoir.themerex.net/wp-content/plugins/trx_demo/images/no-thumb.gif);background-position:center;background-repeat:no-repeat;background-size:cover;" data-style="background-image: url(//themerex.net/wp-content/uploads/edd/2024/03/Ann-Preview.jpg);"> 															<a href="http://demo.themerex.net/" target="_blank"></a> 													</div> 													<h6 class="trx_demo_panel_list_item_title"> 													<a href="http://demo.themerex.net/" target="_blank"><span class="trx_demo_panel_list_item_price">$79</span>AI ANN<span class="trx_demo_panel_list_item_terms"><span class="trx_demo_panel_list_item_term">Technology</span></span></a> 												</h6> 																							</div> 										</div><div class="trx_demo_panel_list_item trx_demo_featured" data-filter-value="buddypress" data-search-value="anesta"> 											<div class="trx_demo_panel_list_item_image_wrap"> 																									<div class="trx_demo_panel_list_item_image trx_demo_panel_list_item_image_ratio_16_9" style="background-image: url(https://manoir.themerex.net/wp-content/plugins/trx_demo/images/no-thumb.gif);background-position:center;background-repeat:no-repeat;background-size:cover;" data-style="background-image: url(//themerex.net/wp-content/uploads/edd/2024/03/Anesta-Preview.jpg);"> 															<a href="http://demo.themerex.net/" target="_blank"></a> 													</div> 													<h6 class="trx_demo_panel_list_item_title"> 													<a href="http://demo.themerex.net/" target="_blank"><span class="trx_demo_panel_list_item_price"><del>$69</del>&nbsp;$69</span>Anesta<span class="trx_demo_panel_list_item_terms"><span class="trx_demo_panel_list_item_term">BuddyPress</span></span></a> 												</h6> 																							</div> 										</div><div class="trx_demo_panel_list_item trx_demo_featured" data-filter-value="blog-magazine" data-search-value="kicker"> 											<div class="trx_demo_panel_list_item_image_wrap"> 																									<div class="trx_demo_panel_list_item_image trx_demo_panel_list_item_image_ratio_16_9" style="background-image: url(https://manoir.themerex.net/wp-content/plugins/trx_demo/images/no-thumb.gif);background-position:center;background-repeat:no-repeat;background-size:cover;" data-style="background-image: url(//themerex.net/wp-content/uploads/edd/2024/03/Kicker-Preview.jpg);"> 															<a href="http://demo.themerex.net/" target="_blank"></a> 													</div> 													<h6 class="trx_demo_panel_list_item_title"> 													<a href="http://demo.themerex.net/" target="_blank"><span class="trx_demo_panel_list_item_price"><del>$59</del>&nbsp;$59</span>Kicker<span class="trx_demo_panel_list_item_terms"><span class="trx_demo_panel_list_item_term">Blog / Magazine</span></span></a> 												</h6> 																							</div> 										</div><div class="trx_demo_panel_list_item trx_demo_featured" data-filter-value="health-beauty" data-search-value="jacqueline"> 											<div class="trx_demo_panel_list_item_image_wrap"> 																									<div class="trx_demo_panel_list_item_image trx_demo_panel_list_item_image_ratio_16_9" style="background-image: url(https://manoir.themerex.net/wp-content/plugins/trx_demo/images/no-thumb.gif);background-position:center;background-repeat:no-repeat;background-size:cover;" data-style="background-image: url(//themerex.net/wp-content/uploads/edd/2024/03/Jacqueline-Preview.jpg);"> 															<a href="http://demo.themerex.net/" target="_blank"></a> 													</div> 													<h6 class="trx_demo_panel_list_item_title"> 													<a href="http://demo.themerex.net/" target="_blank"><span class="trx_demo_panel_list_item_price">$79</span>Jacqueline<span class="trx_demo_panel_list_item_terms"><span class="trx_demo_panel_list_item_term">Health &amp; Beauty</span></span></a> 												</h6> 																							</div> 										</div><div class="trx_demo_panel_list_item trx_demo_featured" data-filter-value="corporate" data-search-value="rebar"> 											<div class="trx_demo_panel_list_item_image_wrap"> 																									<div class="trx_demo_panel_list_item_image trx_demo_panel_list_item_image_ratio_16_9" style="background-image: url(https://manoir.themerex.net/wp-content/plugins/trx_demo/images/no-thumb.gif);background-position:center;background-repeat:no-repeat;background-size:cover;" data-style="background-image: url(//themerex.net/wp-content/uploads/2026/03/rebar-preview-1.jpg);"> 															<a href="http://demo.themerex.net/" target="_blank"></a> 													</div> 													<h6 class="trx_demo_panel_list_item_title"> 													<a href="http://demo.themerex.net/" target="_blank"><span class="trx_demo_panel_list_item_price">$69</span>Rebar<span class="trx_demo_panel_list_item_terms"><span class="trx_demo_panel_list_item_term">Corporate</span></span></a> 												</h6> 																							</div> 										</div><div class="trx_demo_panel_list_item trx_demo_featured" data-filter-value="health-beauty" data-search-value="healer"> 											<div class="trx_demo_panel_list_item_image_wrap"> 																									<div class="trx_demo_panel_list_item_image trx_demo_panel_list_item_image_ratio_16_9" style="background-image: url(https://manoir.themerex.net/wp-content/plugins/trx_demo/images/no-thumb.gif);background-position:center;background-repeat:no-repeat;background-size:cover;" data-style="background-image: url(//themerex.net/wp-content/uploads/2026/03/healer-preview-1.jpg);"> 															<a href="http://demo.themerex.net/" target="_blank"></a> 													</div> 													<h6 class="trx_demo_panel_list_item_title"> 													<a href="http://demo.themerex.net/" target="_blank"><span class="trx_demo_panel_list_item_price">$69</span>Healer<span class="trx_demo_panel_list_item_terms"><span class="trx_demo_panel_list_item_term">Health &amp; Beauty</span></span></a> 												</h6> 																							</div> 										</div><div class="trx_demo_panel_list_item trx_demo_featured" data-filter-value="bestsellers,entertainment,news-editorial" data-search-value="fc united"> 											<div class="trx_demo_panel_list_item_image_wrap"> 																									<div class="trx_demo_panel_list_item_image trx_demo_panel_list_item_image_ratio_16_9" style="background-image: url(https://manoir.themerex.net/wp-content/plugins/trx_demo/images/no-thumb.gif);background-position:center;background-repeat:no-repeat;background-size:cover;" data-style="background-image: url(//themerex.net/wp-content/uploads/edd/2024/03/FC-United-Preview.jpg);"> 															<a href="http://demo.themerex.net/" target="_blank"></a> 													</div> 													<h6 class="trx_demo_panel_list_item_title"> 													<a href="http://demo.themerex.net/" target="_blank"><span class="trx_demo_panel_list_item_price">$79</span>FC United<span class="trx_demo_panel_list_item_terms"><span class="trx_demo_panel_list_item_term">Bestsellers</span><span class="trx_demo_panel_list_item_term">Entertainment</span><span class="trx_demo_panel_list_item_term">News / Editorial</span></span></a> 												</h6> 																							</div> 										</div></div></div><div class="trx_demo_panel_footer"><a class="trx_demo_panel_button sc_button theme_button trx_demo_inline_382267486 trx_demo_inline_1073424542" href="https://themerex.net/premium/" target="_blank">On Sale</a></div></div></div> 			<span class="trx_demo_button_close"><span class="trx_demo_button_close_icon"></span></span>  		</div>  		<div class="trx_demo_panels_mask"></div> 		
+<iframe id="tidio-chat-code" title="Tidio Chat code" style="display: none;" class="trx_addons_resize"></iframe><div class="widget_shopping_cart_live_region screen-reader-text" role="status"></div><use-chat-gpt-ai id="USE_CHAT_GPT_AI_ROOT" class="close" data-version="8.37.3" style="transition: 0.1s ease-in-out;"></use-chat-gpt-ai><use-chat-gpt-ai-content-menu id="USE_CHAT_GPT_AI_ROOT_Context_Menu"></use-chat-gpt-ai-content-menu><use-chat-gpt-ai id="maxai-global-popup-container" translate="no"></use-chat-gpt-ai><max-ai-minimum-app id="USE_CHAT_GPT_AI_ROOT_Minimize_Container" data-version="8.37.3"></max-ai-minimum-app><div id="MAXAI_SNACKBAR_CONTAINER" style="z-index: 2147483647; color: rgb(255, 255, 255); position: absolute;"><span></span></div><div id="tidio-chat" class="needsclick" style="z-index: 999999999 !important; position: fixed; width: 100%; height: 100%; bottom: 0px; right: 0px; pointer-events: none; display: block;"></div><script src="chrome-extension://gppongmhjkpfnbhagpmjfkannfbllamg/js/js.js"></script>		  		<div class="trx_demo_panels_mask"></div> 		
 
 <div id="smartyContainer" style="position: absolute; top: 0px; right: 0px; line-height: initial; z-index: 2147483647; width: auto; font-size: initial; pointer-events: none;"></div><script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
                 <script>
